@@ -19,7 +19,7 @@ public class ModPlacedFeatures {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, ECHO_ORE_PLACE_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.ECHO_ORE_KEY),
-                rareOrePlacementModifiers(9, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
+                commonOrePlacementModifiers(9, HeightRangePlacement.triangle(VerticalAnchor.absolute(-60), VerticalAnchor.absolute(-40))));
     }
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {

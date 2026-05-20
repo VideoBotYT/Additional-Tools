@@ -19,5 +19,6 @@ public class ItemTab {
                     .title(Component.translatable("creativetab.additionaltools.additional_items"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.RAW_ECHO.get());
+                        output.accept(ModItems.CRYSTAL_ECHO.get());
                     }).build());
 }

@@ -11,6 +11,8 @@ public class ModItems {
 
     public static final DeferredItem<Item> RAW_ECHO = ITEMS.register("raw_echo",
             () -> new Item(new  Item.Properties()));
+    public static final DeferredItem<Item> CRYSTAL_ECHO = ITEMS.register("crystal_echo",
+            () -> new Item(new  Item.Properties()));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

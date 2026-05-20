@@ -16,7 +16,11 @@ public class ModLanguageProvider extends LanguageProvider {
         add("creativetab.additionaltools.additional_blocks", "Additional Blocks");
         add("creativetab.additionaltools.additional_items", "Additional Items");
 
+        // blocks
         add(ModBlocks.ECHO_ORE.get(), "Echo Ore");
+
+        // items
         add(ModItems.RAW_ECHO.get(), "Raw Echo");
+        add(ModItems.CRYSTAL_ECHO.get(), "Crystal Echo");
     }
 }
