@@ -1,6 +1,7 @@
 package net.videobot.additionaltools;
 
 import net.videobot.additionaltools.block.ModBlocks;
+import net.videobot.additionaltools.creative.CreativeTabs;
 import net.videobot.additionaltools.item.ModItems;
 import org.slf4j.Logger;
 
@@ -56,6 +57,7 @@ public class AdditionalToolsMod {
 
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
+        CreativeTabs.register(modEventBus);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);

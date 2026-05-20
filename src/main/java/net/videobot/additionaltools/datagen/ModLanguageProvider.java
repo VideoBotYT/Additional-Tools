@@ -3,6 +3,8 @@ package net.videobot.additionaltools.datagen;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 import net.videobot.additionaltools.AdditionalToolsMod;
+import net.videobot.additionaltools.block.ModBlocks;
+import net.videobot.additionaltools.item.ModItems;
 
 public class ModLanguageProvider extends LanguageProvider {
     public ModLanguageProvider(PackOutput output) {
@@ -11,6 +13,10 @@ public class ModLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+        add("creativetab.additionaltools.additional_blocks", "Additional Blocks");
+        add("creativetab.additionaltools.additional_items", "Additional Items");
 
+        add(ModBlocks.ECHO_ORE.get(), "Echo Ore");
+        add(ModItems.RAW_ECHO.get(), "Raw Echo");
     }
 }

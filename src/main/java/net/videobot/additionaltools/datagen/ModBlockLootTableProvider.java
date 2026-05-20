@@ -15,6 +15,7 @@ import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.videobot.additionaltools.block.ModBlocks;
+import net.videobot.additionaltools.item.ModItems;
 
 import java.util.Set;
 
@@ -25,7 +26,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-
+        add(ModBlocks.ECHO_ORE.get(),
+                block -> createOreDrop(ModBlocks.ECHO_ORE.get(), ModItems.RAW_ECHO.get()));
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops){
