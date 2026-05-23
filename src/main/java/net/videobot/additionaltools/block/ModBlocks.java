@@ -20,7 +20,7 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> ECHO_ORE = registerBlock("echo_ore",
             () -> new DropExperienceBlock(UniformInt.of(4, 8),
-                    BlockBehaviour.Properties.of().strength(8f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
+                    BlockBehaviour.Properties.of().strength(3f, 8f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

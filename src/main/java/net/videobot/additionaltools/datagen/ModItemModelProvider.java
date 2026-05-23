@@ -13,7 +13,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        //basicItem(ModItems.RAW_ECHO.get());
-        //basicItem(ModItems.CRYSTAL_ECHO.get());
+        basicItem(ModItems.RAW_ECHO.get());
+        basicItem(ModItems.CRYSTAL_ECHO.get());
     }
 }

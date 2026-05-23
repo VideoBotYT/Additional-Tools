@@ -2,9 +2,11 @@ package net.videobot.additionaltools.datagen;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.tags.BlockTags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.videobot.additionaltools.AdditionalToolsMod;
+import net.videobot.additionaltools.block.ModBlocks;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -16,6 +18,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-
+        tag(BlockTags.NEEDS_DIAMOND_TOOL)
+                .add(ModBlocks.ECHO_ORE.get());
     }
 }
