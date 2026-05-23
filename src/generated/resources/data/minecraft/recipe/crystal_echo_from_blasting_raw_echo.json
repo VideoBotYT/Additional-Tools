@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 800,
+  "experience": 4.0,
+  "group": "echo",
+  "ingredient": {
+    "item": "additionaltools:raw_echo"
+  },
+  "result": {
+    "count": 1,
+    "id": "additionaltools:crystal_echo"
+  }
+}

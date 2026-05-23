@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:has_structure/ancient_city",
+  "features": "additionaltools:echo_ore_placed",
+  "step": "underground_ores"
+}
