@@ -10,16 +10,14 @@ import net.videobot.additionaltools.item.ModItems;
 
 import java.util.function.Supplier;
 
-public class ItemTab {
-    public static final DeferredRegister<CreativeModeTab> ITEMTAB =
+public class ToolsTab {
+    public static final DeferredRegister<CreativeModeTab> TOOLSTAB =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, AdditionalToolsMod.MODID);
 
-    public static final Supplier<CreativeModeTab> ADDITIONAL_ITEMS = ITEMTAB.register("additional_items",
-            () -> CreativeModeTab.builder().icon(()->new ItemStack(ModItems.RAW_ECHO.get()))
-                    .title(Component.translatable("creativetab.additionaltools.additional_items"))
+    public static final Supplier<CreativeModeTab> ADDITIONAL_TOOLS = TOOLSTAB.register("additional_tools",
+            () -> CreativeModeTab.builder().icon(()->new ItemStack(ModItems.ECHO_SWORD.get()))
+                    .title(Component.translatable("creativetab.additionaltools.additional_tools"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.RAW_ECHO.get());
-                        output.accept(ModItems.CRYSTAL_ECHO.get());
-                        output.accept(ModItems.ECHO_TEMPLATE.get());
+                        output.accept(ModItems.ECHO_SWORD.get());
                     }).build());
 }

@@ -2,6 +2,9 @@
   "block.additionaltools.echo_ore": "Echo Ore",
   "creativetab.additionaltools.additional_blocks": "Additional Blocks",
   "creativetab.additionaltools.additional_items": "Additional Items",
+  "creativetab.additionaltools.additional_tools": "Additional Tools",
   "item.additionaltools.crystal_echo": "Crystal Echo",
+  "item.additionaltools.echo_sword": "Echo Sword",
+  "item.additionaltools.echo_template": "Echo Template",
   "item.additionaltools.raw_echo": "Raw Echo"
 }

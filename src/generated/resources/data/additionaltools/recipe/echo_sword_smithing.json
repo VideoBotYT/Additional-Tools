@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "additionaltools:crystal_echo"
+  },
+  "base": {
+    "item": "minecraft:diamond_sword"
+  },
+  "result": {
+    "count": 1,
+    "id": "additionaltools:echo_sword"
+  },
+  "template": {
+    "item": "additionaltools:echo_template"
+  }
+}

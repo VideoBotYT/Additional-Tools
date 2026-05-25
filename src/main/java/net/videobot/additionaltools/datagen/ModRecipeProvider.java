@@ -2,10 +2,9 @@ package net.videobot.additionaltools.datagen;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
@@ -24,6 +23,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
         blasting(recipeOutput, List.of(ModItems.RAW_ECHO.get(), ModBlocks.ECHO_ORE), RecipeCategory.TOOLS, ModItems.CRYSTAL_ECHO.get(), 4f, 800, "echo");
+
+        upgrade(recipeOutput, ModItems.ECHO_TEMPLATE.get(), ModItems.CRYSTAL_ECHO.get(), Items.DIAMOND_SWORD, ModItems.ECHO_SWORD.get(), RecipeCategory.COMBAT, "has_echo", ModItems.CRYSTAL_ECHO.get());
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ECHO_TEMPLATE.get())
+                .pattern("EEE")
+                .pattern("ETE")
+                .pattern("EEE")
+                .define('E', ModItems.CRYSTAL_ECHO.get())
+                .define('T', Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE)
+                .unlockedBy("has_echo", has(ModItems.CRYSTAL_ECHO.get())).save(recipeOutput);
     }
 
     protected static void smelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
@@ -44,5 +53,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), pCategory, pResult, pExperience, pCookingTime, pCookingSerializer, factory).group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike))
                     .save(recipeOutput, AdditionalToolsMod.MODID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
         }
+    }
+
+    protected static void upgrade(RecipeOutput recipeOutput, Item template, Item upgradeItem, Item ingredientItem, Item resultItem,
+                                  RecipeCategory category, String unlock, Item unlockItem){
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(template), Ingredient.of(ingredientItem), Ingredient.of(upgradeItem), category, resultItem)
+                .unlocks(unlock, has(unlockItem))
+                .save(recipeOutput, AdditionalToolsMod.MODID + ":" + getItemName(resultItem) + "_smithing");
     }
 }

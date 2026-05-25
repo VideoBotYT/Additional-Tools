@@ -15,6 +15,7 @@ public class ModLanguageProvider extends LanguageProvider {
     protected void addTranslations() {
         add("creativetab.additionaltools.additional_blocks", "Additional Blocks");
         add("creativetab.additionaltools.additional_items", "Additional Items");
+        add("creativetab.additionaltools.additional_tools", "Additional Tools");
 
         // blocks
         add(ModBlocks.ECHO_ORE.get(), "Echo Ore");
@@ -22,5 +23,9 @@ public class ModLanguageProvider extends LanguageProvider {
         // items
         add(ModItems.RAW_ECHO.get(), "Raw Echo");
         add(ModItems.CRYSTAL_ECHO.get(), "Crystal Echo");
+        add(ModItems.ECHO_TEMPLATE.get(), "Echo Template");
+
+        //tools
+        add(ModItems.ECHO_SWORD.get(), "Echo Sword");
     }
 }

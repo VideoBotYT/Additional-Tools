@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "additionaltools:crystal_echo"
+    },
+    "T": {
+      "item": "minecraft:netherite_upgrade_smithing_template"
+    }
+  },
+  "pattern": [
+    "EEE",
+    "ETE",
+    "EEE"
+  ],
+  "result": {
+    "count": 1,
+    "id": "additionaltools:echo_template"
+  }
+}
