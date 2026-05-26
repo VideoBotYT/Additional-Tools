@@ -23,7 +23,7 @@ public class ModLanguageProvider extends LanguageProvider {
         // items
         add(ModItems.RAW_ECHO.get(), "Raw Echo");
         add(ModItems.CRYSTAL_ECHO.get(), "Crystal Echo");
-        add(ModItems.ECHO_TEMPLATE.get(), "Echo Template");
+        add(ModItems.ECHO_TEMPLATE.get(), "Echo Upgrade Template");
 
         //tools
         add(ModItems.ECHO_SWORD.get(), "Echo Sword");
