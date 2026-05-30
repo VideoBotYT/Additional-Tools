@@ -24,7 +24,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected void buildRecipes(RecipeOutput recipeOutput) {
         blasting(recipeOutput, List.of(ModItems.RAW_ECHO.get(), ModBlocks.ECHO_ORE), RecipeCategory.TOOLS, ModItems.CRYSTAL_ECHO.get(), 4f, 800, "echo");
 
-        upgrade(recipeOutput, ModItems.ECHO_TEMPLATE.get(), ModItems.CRYSTAL_ECHO.get(), Items.DIAMOND_SWORD, ModItems.ECHO_SWORD.get(), RecipeCategory.COMBAT, "has_echo", ModItems.CRYSTAL_ECHO.get());
+        upgrade(recipeOutput, ModItems.ECHO_TEMPLATE.get(), ModItems.CRYSTAL_ECHO.get(), Items.NETHERITE_SWORD, ModItems.ECHO_SWORD.get(), RecipeCategory.COMBAT, "has_echo", ModItems.CRYSTAL_ECHO.get());
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ECHO_TEMPLATE.get())
                 .pattern("EEE")

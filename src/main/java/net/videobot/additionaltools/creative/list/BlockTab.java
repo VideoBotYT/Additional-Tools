@@ -20,5 +20,6 @@ public class BlockTab {
                     .title(Component.translatable("creativetab.additionaltools.additional_blocks"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.ECHO_ORE.get());
+                        output.accept(ModBlocks.ECHO_UPGRADER.get());
                     }).build());
 }

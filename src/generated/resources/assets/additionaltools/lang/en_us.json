@@ -1,5 +1,7 @@
 {
   "block.additionaltools.echo_ore": "Echo Ore",
+  "block.additionaltools.echo_upgrader": "Echo Upgrader",
+  "blockentity.additionaltools.echo_upgrader": "Echo Upgrader",
   "creativetab.additionaltools.additional_blocks": "Additional Blocks",
   "creativetab.additionaltools.additional_items": "Additional Items",
   "creativetab.additionaltools.additional_tools": "Additional Tools",

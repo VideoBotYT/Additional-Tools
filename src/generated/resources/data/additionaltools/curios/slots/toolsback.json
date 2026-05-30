@@ -1,0 +1,8 @@
+{
+  "drop_rule": "ALWAYS_DROP",
+  "icon": "curios:slot/empty_back_slot",
+  "size": 1,
+  "validators": [
+    "curios:back"
+  ]
+}

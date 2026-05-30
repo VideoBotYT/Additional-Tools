@@ -1,8 +1,10 @@
 package net.videobot.additionaltools;
 
 import net.videobot.additionaltools.block.ModBlocks;
+import net.videobot.additionaltools.block.entity.ModBlockEntities;
 import net.videobot.additionaltools.creative.CreativeTabs;
 import net.videobot.additionaltools.item.ModItems;
+import net.videobot.additionaltools.screen.ModMenuTypes;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -58,6 +60,9 @@ public class AdditionalToolsMod {
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
         CreativeTabs.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);

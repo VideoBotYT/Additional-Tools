@@ -7,8 +7,11 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.videobot.additionaltools.screen.ModMenuTypes;
+import net.videobot.additionaltools.screen.custom.EchoUpgraderScreen;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
 @Mod(value = AdditionalToolsMod.MODID, dist = Dist.CLIENT)
@@ -27,5 +30,10 @@ public class AdditionalToolsModClient {
         // Some client setup code
         AdditionalToolsMod.LOGGER.info("HELLO FROM CLIENT SETUP");
         AdditionalToolsMod.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+    }
+
+    @SubscribeEvent
+    public static void registerScreens(RegisterMenuScreensEvent event) {
+        event.register(ModMenuTypes.ECHO_UPGRADER_MENU.get(), EchoUpgraderScreen::new);
     }
 }

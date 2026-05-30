@@ -2,6 +2,7 @@ package net.videobot.additionaltools.datagen;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.videobot.additionaltools.AdditionalToolsMod;
 import top.theillusivec4.curios.api.CuriosDataProvider;
@@ -16,8 +17,14 @@ public class SlotProvider extends CuriosDataProvider {
 
     @Override
     public void generate(HolderLookup.Provider registries, ExistingFileHelper fileHelper) {
-        this.createSlot("back")
+        createSlot("toolsback")
+                .icon(ResourceLocation.fromNamespaceAndPath("curios", "slot/empty_back_slot"))
                 .size(1)
-                .dropRule(ICurio.DropRule.ALWAYS_KEEP);
+                .dropRule(ICurio.DropRule.ALWAYS_DROP)
+                .addValidator(ResourceLocation.fromNamespaceAndPath("curios", "back"));
+
+        createEntities("slots")
+                .addPlayer()
+                .addSlots("toolsback");
     }
 }
