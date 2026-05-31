@@ -7,7 +7,6 @@ import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.videobot.additionaltools.AdditionalToolsMod;
 import net.videobot.additionaltools.block.ModBlocks;
-import net.videobot.additionaltools.item.ModItems;
 
 import java.util.function.Supplier;
 
@@ -20,6 +19,6 @@ public class BlockTab {
                     .title(Component.translatable("creativetab.additionaltools.additional_blocks"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.ECHO_ORE.get());
-                        output.accept(ModBlocks.ECHO_UPGRADER.get());
+                        output.accept(ModBlocks.CRYSTAL_UPGRADER.get());
                     }).build());
 }

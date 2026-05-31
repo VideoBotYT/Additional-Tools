@@ -11,7 +11,7 @@ import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.videobot.additionaltools.screen.ModMenuTypes;
-import net.videobot.additionaltools.screen.custom.EchoUpgraderScreen;
+import net.videobot.additionaltools.screen.custom.CrystalUpgraderScreen;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
 @Mod(value = AdditionalToolsMod.MODID, dist = Dist.CLIENT)
@@ -34,6 +34,6 @@ public class AdditionalToolsModClient {
 
     @SubscribeEvent
     public static void registerScreens(RegisterMenuScreensEvent event) {
-        event.register(ModMenuTypes.ECHO_UPGRADER_MENU.get(), EchoUpgraderScreen::new);
+        event.register(ModMenuTypes.CRYSTAL_UPGRADER_MENU.get(), CrystalUpgraderScreen::new);
     }
 }

@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "additionaltools:echo_upgrader"
+          "name": "additionaltools:crystal_upgrader"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "additionaltools:blocks/echo_upgrader"
+  "random_sequence": "additionaltools:blocks/crystal_upgrader"
 }

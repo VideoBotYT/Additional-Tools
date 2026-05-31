@@ -13,9 +13,9 @@ public class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
             DeferredRegister.create(BuiltInRegistries.BLOCK_ENTITY_TYPE, AdditionalToolsMod.MODID);
 
-    public static final Supplier<BlockEntityType<EchoUpgraderBlockEntity>> ECHO_UPGRADER_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("echo_upgrader_block_entity", () -> BlockEntityType.Builder.of(
-                    EchoUpgraderBlockEntity::new, ModBlocks.ECHO_UPGRADER.get()).build(null));
+    public static final Supplier<BlockEntityType<CrystalUpgraderBlockEntity>> CRYSTAL_UPGRADER_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("crystal_upgrader_block_entity", () -> BlockEntityType.Builder.of(
+                    CrystalUpgraderBlockEntity::new, ModBlocks.CRYSTAL_UPGRADER.get()).build(null));
 
     public static void register(IEventBus bus) {
         BLOCK_ENTITIES.register(bus);

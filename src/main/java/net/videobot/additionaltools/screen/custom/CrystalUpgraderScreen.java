@@ -9,13 +9,13 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.videobot.additionaltools.AdditionalToolsMod;
 
-public class EchoUpgraderScreen extends AbstractContainerScreen<EchoUpgraderMenu> {
+public class CrystalUpgraderScreen extends AbstractContainerScreen<CrystalUpgraderMenu> {
     private static final ResourceLocation GUI_TEXTURE =
-            ResourceLocation.fromNamespaceAndPath(AdditionalToolsMod.MODID, "textures/gui/echo_upgrader/echo_upgrader_gui.png");
+            ResourceLocation.fromNamespaceAndPath(AdditionalToolsMod.MODID, "textures/gui/crystal_upgrader/crystal_upgrader_gui.png");
     private static final ResourceLocation ARROW_TEXTURE =
-            ResourceLocation.fromNamespaceAndPath(AdditionalToolsMod.MODID, "textures/gui/echo_upgrader/echo_upgrader_arrow.png");
+            ResourceLocation.fromNamespaceAndPath(AdditionalToolsMod.MODID, "textures/gui/crystal_upgrader/crystal_upgrader_arrow.png");
 
-    public EchoUpgraderScreen(EchoUpgraderMenu menu, Inventory playerInventory, Component title) {
+    public CrystalUpgraderScreen(CrystalUpgraderMenu menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);
     }
 
@@ -28,9 +28,9 @@ public class EchoUpgraderScreen extends AbstractContainerScreen<EchoUpgraderMenu
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
 
-        guiGraphics.blit(GUI_TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
+        guiGraphics.blit(GUI_TEXTURE, x, y, 0, 0, imageWidth, 174);
 
-        renderProgress(guiGraphics, x+52, y+30);
+        renderProgress(guiGraphics, x+52, y+38);
     }
 
     private void renderProgress(GuiGraphics guiGraphics, int x, int y) {

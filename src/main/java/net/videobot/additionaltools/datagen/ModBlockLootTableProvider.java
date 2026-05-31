@@ -29,7 +29,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         add(ModBlocks.ECHO_ORE.get(),
                 block -> createOreDrop(ModBlocks.ECHO_ORE.get(), ModItems.RAW_ECHO.get()));
 
-        this.dropSelf(ModBlocks.ECHO_UPGRADER.get());
+        this.dropSelf(ModBlocks.CRYSTAL_UPGRADER.get());
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops){

@@ -17,14 +17,14 @@ import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.videobot.additionaltools.block.entity.EchoUpgraderBlockEntity;
+import net.videobot.additionaltools.block.entity.CrystalUpgraderBlockEntity;
 import net.videobot.additionaltools.block.entity.ModBlockEntities;
 import org.jetbrains.annotations.Nullable;
 
-public class EchoUpgraderBlock extends BaseEntityBlock {
-    public static final MapCodec<EchoUpgraderBlock> CODEC = simpleCodec(EchoUpgraderBlock::new);
+public class CrystalUpgraderBlock extends BaseEntityBlock {
+    public static final MapCodec<CrystalUpgraderBlock> CODEC = simpleCodec(CrystalUpgraderBlock::new);
 
-    public EchoUpgraderBlock(Properties properties) {
+    public CrystalUpgraderBlock(Properties properties) {
         super(properties);
     }
 
@@ -35,7 +35,7 @@ public class EchoUpgraderBlock extends BaseEntityBlock {
 
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new  EchoUpgraderBlockEntity(pos, state);
+        return new CrystalUpgraderBlockEntity(pos, state);
     }
 
     @Override
@@ -47,8 +47,8 @@ public class EchoUpgraderBlock extends BaseEntityBlock {
     protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
         if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = level.getBlockEntity(pos);
-            if (blockEntity instanceof EchoUpgraderBlockEntity echoUpgraderBlockEntity)
-                echoUpgraderBlockEntity.drops();
+            if (blockEntity instanceof CrystalUpgraderBlockEntity crystalUpgraderBlockEntity)
+                crystalUpgraderBlockEntity.drops();
         }
 
         super.onRemove(state, level, pos, newState, movedByPiston);
@@ -58,8 +58,8 @@ public class EchoUpgraderBlock extends BaseEntityBlock {
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         if (!level.isClientSide()) {
             BlockEntity entity = level.getBlockEntity(pos);
-            if (entity instanceof EchoUpgraderBlockEntity echoUpgraderBlockEntity)
-                ((ServerPlayer) player).openMenu(new SimpleMenuProvider(echoUpgraderBlockEntity, Component.translatable("blockentity.additionaltools.echo_upgrader")), pos);
+            if (entity instanceof CrystalUpgraderBlockEntity crystalUpgraderBlockEntity)
+                ((ServerPlayer) player).openMenu(new SimpleMenuProvider(crystalUpgraderBlockEntity, Component.translatable("blockentity.additionaltools.crystal_upgrader")), pos);
             else
                 throw new IllegalStateException("Container provider missing!");
         }
@@ -72,7 +72,7 @@ public class EchoUpgraderBlock extends BaseEntityBlock {
         if (level.isClientSide())
             return null;
 
-        return createTickerHelper(blockEntityType, ModBlockEntities.ECHO_UPGRADER_BLOCK_ENTITY.get(),
+        return createTickerHelper(blockEntityType, ModBlockEntities.CRYSTAL_UPGRADER_BLOCK_ENTITY.get(),
                 (blevel, blockPos, blockState, blockEntity) -> blockEntity.tick(blevel, blockPos, blockState));
     }
 }

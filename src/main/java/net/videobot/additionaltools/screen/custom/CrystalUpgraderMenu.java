@@ -9,22 +9,22 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.neoforged.neoforge.items.SlotItemHandler;
 import net.videobot.additionaltools.block.ModBlocks;
-import net.videobot.additionaltools.block.entity.EchoUpgraderBlockEntity;
+import net.videobot.additionaltools.block.entity.CrystalUpgraderBlockEntity;
 import net.videobot.additionaltools.screen.ModMenuTypes;
 
-public class EchoUpgraderMenu extends AbstractContainerMenu {
-    public final EchoUpgraderBlockEntity blockEntity;
+public class CrystalUpgraderMenu extends AbstractContainerMenu {
+    public final CrystalUpgraderBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
 
-    public EchoUpgraderMenu(int containerId, Inventory inv, FriendlyByteBuf extraData) {
+    public CrystalUpgraderMenu(int containerId, Inventory inv, FriendlyByteBuf extraData) {
         this(containerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
     }
 
-    public EchoUpgraderMenu(int containerId, Inventory inv, BlockEntity entity,  ContainerData data) {
-        super(ModMenuTypes.ECHO_UPGRADER_MENU.get(), containerId);
+    public CrystalUpgraderMenu(int containerId, Inventory inv, BlockEntity entity, ContainerData data) {
+        super(ModMenuTypes.CRYSTAL_UPGRADER_MENU.get(), containerId);
 
-        this.blockEntity = ((EchoUpgraderBlockEntity) entity);
+        this.blockEntity = ((CrystalUpgraderBlockEntity) entity);
         this.level = inv.player.level();
         this.data = data;
 
@@ -32,12 +32,12 @@ public class EchoUpgraderMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         // input slots
-        this.addSlot(new SlotItemHandler(blockEntity.itemStackHandler, 0, 44, 13)); // template slot
-        this.addSlot(new SlotItemHandler(blockEntity.itemStackHandler, 1, 80, 13)); // item to upgrade
-        this.addSlot(new SlotItemHandler(blockEntity.itemStackHandler, 2, 116, 13)); // upgrade ingredient
+        this.addSlot(new SlotItemHandler(blockEntity.itemStackHandler, 0, 44, 21)); // template slot
+        this.addSlot(new SlotItemHandler(blockEntity.itemStackHandler, 1, 80, 21)); // item to upgrade
+        this.addSlot(new SlotItemHandler(blockEntity.itemStackHandler, 2, 116, 21)); // upgrade ingredient
 
         // output slot
-        this.addSlot(new SlotItemHandler(blockEntity.itemStackHandler, 3, 80, 53));
+        this.addSlot(new SlotItemHandler(blockEntity.itemStackHandler, 3, 80, 61));
 
         addDataSlots(data);
     }
@@ -107,20 +107,20 @@ public class EchoUpgraderMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, ModBlocks.ECHO_UPGRADER.get());
+                player, ModBlocks.CRYSTAL_UPGRADER.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 9; j++) {
-                this.addSlot(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
+                this.addSlot(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, 92 + i * 18));
             }
         }
     }
 
     private void addPlayerHotbar(Inventory playerInventory) {
         for (int i = 0; i < 9; i++) {
-            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
+            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 150));
         }
     }
 }

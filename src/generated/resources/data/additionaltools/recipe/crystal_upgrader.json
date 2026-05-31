@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "E": {
+      "item": "additionaltools:crystal_echo"
+    },
+    "S": {
+      "item": "minecraft:smithing_table"
+    }
+  },
+  "pattern": [
+    "EAE",
+    "ASA",
+    "EAE"
+  ],
+  "result": {
+    "count": 1,
+    "id": "additionaltools:crystal_upgrader"
+  }
+}

@@ -14,7 +14,6 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -22,10 +21,10 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.videobot.additionaltools.item.ModItems;
-import net.videobot.additionaltools.screen.custom.EchoUpgraderMenu;
+import net.videobot.additionaltools.screen.custom.CrystalUpgraderMenu;
 import org.jetbrains.annotations.Nullable;
 
-public class EchoUpgraderBlockEntity extends BlockEntity implements MenuProvider {
+public class CrystalUpgraderBlockEntity extends BlockEntity implements MenuProvider {
     public final ItemStackHandler itemStackHandler = new ItemStackHandler(4){
         @Override
         protected void onContentsChanged(int slot) {
@@ -45,14 +44,14 @@ public class EchoUpgraderBlockEntity extends BlockEntity implements MenuProvider
     private int progress = 0;
     private int max_progress = 80;
 
-    public EchoUpgraderBlockEntity(BlockPos pos, BlockState blockState) {
-        super(ModBlockEntities.ECHO_UPGRADER_BLOCK_ENTITY.get(), pos, blockState);
+    public CrystalUpgraderBlockEntity(BlockPos pos, BlockState blockState) {
+        super(ModBlockEntities.CRYSTAL_UPGRADER_BLOCK_ENTITY.get(), pos, blockState);
         data = new ContainerData() {
             @Override
             public int get(int index) {
                 return switch(index){
-                    case 0 -> EchoUpgraderBlockEntity.this.progress;
-                    case 1 -> EchoUpgraderBlockEntity.this.max_progress;
+                    case 0 -> CrystalUpgraderBlockEntity.this.progress;
+                    case 1 -> CrystalUpgraderBlockEntity.this.max_progress;
                     default -> 0;
                 };
             }
@@ -60,8 +59,8 @@ public class EchoUpgraderBlockEntity extends BlockEntity implements MenuProvider
             @Override
             public void set(int index, int value) {
                 switch(index){
-                    case 0: EchoUpgraderBlockEntity.this.progress = value;
-                    case 1: EchoUpgraderBlockEntity.this.max_progress = value;
+                    case 0: CrystalUpgraderBlockEntity.this.progress = value;
+                    case 1: CrystalUpgraderBlockEntity.this.max_progress = value;
                 }
             }
 
@@ -74,29 +73,20 @@ public class EchoUpgraderBlockEntity extends BlockEntity implements MenuProvider
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("block.additionaltools.echo_upgrader");
+        return Component.translatable("block.additionaltools.crystal_upgrader");
     }
 
     @Override
     public @Nullable AbstractContainerMenu createMenu(int containerId, Inventory playerInventory, Player player) {
-        return new EchoUpgraderMenu(containerId, playerInventory, this, this.data);
+        return new CrystalUpgraderMenu(containerId, playerInventory, this, this.data);
     }
 
-    public void drops(){
+    public void drops() {
         SimpleContainer inventory = new SimpleContainer(itemStackHandler.getSlots());
         for (int i = 0; i < itemStackHandler.getSlots(); i++)
             inventory.setItem(i, itemStackHandler.getStackInSlot(i));
 
         Containers.dropContents(this.level, this.worldPosition, inventory);
-    }
-
-    @Override
-    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-        tag.put("inventory", itemStackHandler.serializeNBT(registries));
-        tag.putInt("echo_upgrader.progress", progress);
-        tag.putInt("echo_upgrader.max_progress", max_progress);
-
-        super.saveAdditional(tag, registries);
     }
 
     public void tick(Level level, BlockPos blockPos, BlockState blockState) {
@@ -158,12 +148,21 @@ public class EchoUpgraderBlockEntity extends BlockEntity implements MenuProvider
     }
 
     @Override
+    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+        tag.put("inventory", itemStackHandler.serializeNBT(registries));
+        tag.putInt("crystal_upgrader.progress", progress);
+        tag.putInt("crystal_upgrader.max_progress", max_progress);
+
+        super.saveAdditional(tag, registries);
+    }
+
+    @Override
     protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.loadAdditional(tag, registries);
 
         itemStackHandler.deserializeNBT(registries, tag.getCompound("inventory"));
-        progress = tag.getInt("echo_upgrader.progress");
-        max_progress = tag.getInt("echo_upgrader.max_progress");
+        progress = tag.getInt("crystal_upgrader.progress");
+        max_progress = tag.getInt("crystal_upgrader.max_progress");
     }
 
     @Override

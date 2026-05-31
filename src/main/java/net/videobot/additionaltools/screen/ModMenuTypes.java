@@ -9,16 +9,14 @@ import net.neoforged.neoforge.network.IContainerFactory;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.videobot.additionaltools.AdditionalToolsMod;
-import net.videobot.additionaltools.screen.custom.EchoUpgraderMenu;
-
-import java.awt.*;
+import net.videobot.additionaltools.screen.custom.CrystalUpgraderMenu;
 
 public class ModMenuTypes {
     public static final DeferredRegister<MenuType<?>> MENUS =
             DeferredRegister.create(Registries.MENU, AdditionalToolsMod.MODID);
 
-    public static final DeferredHolder<MenuType<?>, MenuType<EchoUpgraderMenu>> ECHO_UPGRADER_MENU =
-            registerMenuType("echo_upgrader_menu", EchoUpgraderMenu::new);
+    public static final DeferredHolder<MenuType<?>, MenuType<CrystalUpgraderMenu>> CRYSTAL_UPGRADER_MENU =
+            registerMenuType("echo_upgrader_menu", CrystalUpgraderMenu::new);
 
     private static <T extends AbstractContainerMenu> DeferredHolder<MenuType<?>, MenuType<T>> registerMenuType(String name,
                                                                                                                IContainerFactory<T> factory) {

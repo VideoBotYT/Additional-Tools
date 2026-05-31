@@ -7,6 +7,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.videobot.additionaltools.AdditionalToolsMod;
 import net.videobot.additionaltools.block.ModBlocks;
@@ -33,6 +34,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('E', ModItems.CRYSTAL_ECHO.get())
                 .define('T', Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE)
                 .unlockedBy("has_echo", has(ModItems.CRYSTAL_ECHO.get())).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CRYSTAL_UPGRADER.get())
+                .pattern("EAE")
+                .pattern("ASA")
+                .pattern("EAE")
+                .define('E', ModItems.CRYSTAL_ECHO.get())
+                .define('A', Items.AMETHYST_SHARD)
+                .define('S', Blocks.SMITHING_TABLE)
+                .unlockedBy("has_amethyst", has(Items.AMETHYST_SHARD)).save(recipeOutput);
     }
 
     protected static void smelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,

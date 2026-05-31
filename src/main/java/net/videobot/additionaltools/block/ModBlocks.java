@@ -11,7 +11,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.videobot.additionaltools.AdditionalToolsMod;
-import net.videobot.additionaltools.block.custom.EchoUpgraderBlock;
+import net.videobot.additionaltools.block.custom.CrystalUpgraderBlock;
 import net.videobot.additionaltools.item.ModItems;
 
 import java.util.function.Supplier;
@@ -29,8 +29,8 @@ public class ModBlocks {
         return toReturn;
     }
 
-    public static final DeferredBlock<Block> ECHO_UPGRADER = registerBlock("echo_upgrader",
-            () -> new EchoUpgraderBlock(BlockBehaviour.Properties.of()));
+    public static final DeferredBlock<Block> CRYSTAL_UPGRADER = registerBlock("crystal_upgrader",
+            () -> new CrystalUpgraderBlock(BlockBehaviour.Properties.of()));
 
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
