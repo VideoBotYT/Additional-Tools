@@ -15,8 +15,12 @@ public class CrystalUpgraderScreen extends AbstractContainerScreen<CrystalUpgrad
     private static final ResourceLocation ARROW_TEXTURE =
             ResourceLocation.fromNamespaceAndPath(AdditionalToolsMod.MODID, "textures/gui/crystal_upgrader/crystal_upgrader_arrow.png");
 
+    private final int guiSizeY = 174;
+
     public CrystalUpgraderScreen(CrystalUpgraderMenu menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);
+
+        inventoryLabelY = guiSizeY - 94;
     }
 
     @Override
@@ -28,7 +32,7 @@ public class CrystalUpgraderScreen extends AbstractContainerScreen<CrystalUpgrad
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
 
-        guiGraphics.blit(GUI_TEXTURE, x, y, 0, 0, imageWidth, 174);
+        guiGraphics.blit(GUI_TEXTURE, x, y, 0, 0, imageWidth, guiSizeY);
 
         renderProgress(guiGraphics, x+52, y+38);
     }

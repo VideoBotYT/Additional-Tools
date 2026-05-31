@@ -37,7 +37,12 @@ public class CrystalUpgraderMenu extends AbstractContainerMenu {
         this.addSlot(new SlotItemHandler(blockEntity.itemStackHandler, 2, 116, 21)); // upgrade ingredient
 
         // output slot
-        this.addSlot(new SlotItemHandler(blockEntity.itemStackHandler, 3, 80, 61));
+        this.addSlot(new SlotItemHandler(blockEntity.itemStackHandler, 3, 80, 61){
+            @Override
+            public boolean mayPlace(ItemStack stack) {
+                return false;
+            }
+        });
 
         addDataSlots(data);
     }
