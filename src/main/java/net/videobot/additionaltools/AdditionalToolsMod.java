@@ -4,6 +4,7 @@ import net.videobot.additionaltools.block.ModBlocks;
 import net.videobot.additionaltools.block.entity.ModBlockEntities;
 import net.videobot.additionaltools.creative.CreativeTabs;
 import net.videobot.additionaltools.item.ModItems;
+import net.videobot.additionaltools.recipe.ModRecipes;
 import net.videobot.additionaltools.screen.ModMenuTypes;
 import org.slf4j.Logger;
 
@@ -63,6 +64,8 @@ public class AdditionalToolsMod {
 
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+
+        ModRecipes.register(modEventBus);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);

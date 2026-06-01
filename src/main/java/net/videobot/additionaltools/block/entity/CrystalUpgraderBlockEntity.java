@@ -16,13 +16,19 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.videobot.additionaltools.item.ModItems;
+import net.videobot.additionaltools.recipe.ModRecipes;
+import net.videobot.additionaltools.recipe.crystal_upgrader.CrystalUpgraderRecipe;
+import net.videobot.additionaltools.recipe.crystal_upgrader.CrystalUpgraderRecipeInput;
 import net.videobot.additionaltools.screen.custom.CrystalUpgraderMenu;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class CrystalUpgraderBlockEntity extends BlockEntity implements MenuProvider {
     public final ItemStackHandler itemStackHandler = new ItemStackHandler(4){
@@ -36,7 +42,7 @@ public class CrystalUpgraderBlockEntity extends BlockEntity implements MenuProvi
     };
 
     private static final int TEMPLATE_SLOT = 0;
-    private static final int UPGRADABLE_SLOT = 1;
+    private static final int TOOL_SLOT = 1;
     private static final int INGREDIENT_SLOT = 2;
     private static final int OUT_SLOT = 3;
 
@@ -109,11 +115,13 @@ public class CrystalUpgraderBlockEntity extends BlockEntity implements MenuProvi
     }
 
     private void craft() {
-        ItemStack output = new ItemStack(ModItems.ECHO_SWORD.get());
+        Optional<RecipeHolder<CrystalUpgraderRecipe>> recipe = getCurrentRecipe();
+        ItemStack output = recipe.get().value().output();
 
-        for (int i = 0; i < itemStackHandler.getSlots()-1; i++) {
-            itemStackHandler.extractItem(i, 1, false);
-        }
+        itemStackHandler.extractItem(TEMPLATE_SLOT, recipe.get().value().template().getItems()[0].getCount(), false);
+        itemStackHandler.extractItem(TOOL_SLOT, recipe.get().value().tool().getItems()[0].getCount(), false);
+        itemStackHandler.extractItem(INGREDIENT_SLOT, recipe.get().value().ingredient().getItems()[0].getCount(), false);
+
         itemStackHandler.setStackInSlot(OUT_SLOT, new ItemStack(output.getItem(),
                 itemStackHandler.getStackInSlot(OUT_SLOT).getCount() + output.getCount()));
     }
@@ -127,12 +135,23 @@ public class CrystalUpgraderBlockEntity extends BlockEntity implements MenuProvi
     }
 
     private boolean hasRecipe() {
-        ItemStack output = new ItemStack(ModItems.ECHO_SWORD.get());
+        Optional<RecipeHolder<CrystalUpgraderRecipe>> recipe = getCurrentRecipe();
+        if (recipe.isEmpty())
+            return false;
 
-        return itemStackHandler.getStackInSlot(TEMPLATE_SLOT).is(ModItems.ECHO_TEMPLATE)
-                &&itemStackHandler.getStackInSlot(UPGRADABLE_SLOT).is(ModItems.CRYSTAL_ECHO)
-                &&itemStackHandler.getStackInSlot(INGREDIENT_SLOT).is(Items.NETHERITE_SWORD)
-                &&canInsertIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
+        max_progress = recipe.get().value().craftingTime();
+
+        ItemStack output = recipe.get().value().output();
+
+        return canInsertItemIntoOutputSlot(output);
+    }
+
+    private Optional<RecipeHolder<CrystalUpgraderRecipe>> getCurrentRecipe() {
+        return this.level.getRecipeManager()
+                .getRecipeFor(ModRecipes.CRYSTAL_UPGRADER_RECIPE_TYPE.get(), new CrystalUpgraderRecipeInput(
+                        itemStackHandler.getStackInSlot(TEMPLATE_SLOT),
+                        itemStackHandler.getStackInSlot(TOOL_SLOT),
+                        itemStackHandler.getStackInSlot(INGREDIENT_SLOT)), level);
     }
 
     private boolean canInsertItemIntoOutputSlot(ItemStack output) {
