@@ -28,9 +28,6 @@ public class CrystalUpgraderMenu extends AbstractContainerMenu {
         this.level = inv.player.level();
         this.data = data;
 
-        addPlayerInventory(inv);
-        addPlayerHotbar(inv);
-
         // input slots
         this.addSlot(new SlotItemHandler(blockEntity.itemStackHandler, 0, 44, 21)); // template slot
         this.addSlot(new SlotItemHandler(blockEntity.itemStackHandler, 1, 80, 21)); // item to upgrade
@@ -43,6 +40,9 @@ public class CrystalUpgraderMenu extends AbstractContainerMenu {
                 return false;
             }
         });
+
+        addPlayerInventory(inv);
+        addPlayerHotbar(inv);
 
         addDataSlots(data);
     }

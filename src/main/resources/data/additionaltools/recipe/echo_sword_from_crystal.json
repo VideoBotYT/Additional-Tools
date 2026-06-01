@@ -10,7 +10,7 @@
     "item": "additionaltools:crystal_echo"
   },
   "result": {
-    "item": "additionaltools:echo_sword"
+    "id": "additionaltools:echo_sword"
   },
   "craftingTime": 20
 }
