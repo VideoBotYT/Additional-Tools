@@ -8,5 +8,6 @@
   "item.additionaltools.crystal_echo": "Crystal Echo",
   "item.additionaltools.echo_sword": "Echo Sword",
   "item.additionaltools.echo_template": "Echo Upgrade Template",
-  "item.additionaltools.raw_echo": "Raw Echo"
+  "item.additionaltools.raw_echo": "Raw Echo",
+  "jei.crystal_recipe_tip.craft_time": "%s s"
 }

@@ -17,6 +17,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add("creativetab.additionaltools.additional_items", "Additional Items");
         add("creativetab.additionaltools.additional_tools", "Additional Tools");
         add("blockentity.additionaltools.crystal_upgrader", "Crystal Upgrader");
+        add("jei.crystal_recipe_tip.craft_time", "%s s");
 
         // blocks
         add(ModBlocks.ECHO_ORE.get(), "Echo Ore");

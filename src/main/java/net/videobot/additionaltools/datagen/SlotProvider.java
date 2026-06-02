@@ -21,7 +21,7 @@ public class SlotProvider extends CuriosDataProvider {
                 .icon(ResourceLocation.fromNamespaceAndPath("curios", "slot/empty_back_slot"))
                 .size(1)
                 .dropRule(ICurio.DropRule.ALWAYS_DROP)
-                .addValidator(ResourceLocation.fromNamespaceAndPath("curios", "back"));
+                .addValidator(ResourceLocation.fromNamespaceAndPath("curios", "tag"));
 
         createEntities("slots")
                 .addPlayer()

@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.videobot.additionaltools.AdditionalToolsMod;
 import net.videobot.additionaltools.block.ModBlocks;
+import net.videobot.additionaltools.datagen.builders.CrystalRecipeBuilder;
 import net.videobot.additionaltools.item.ModItems;
 
 import java.util.List;
@@ -43,6 +44,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('A', Items.AMETHYST_SHARD)
                 .define('S', Blocks.SMITHING_TABLE)
                 .unlockedBy("has_amethyst", has(Items.AMETHYST_SHARD)).save(recipeOutput);
+
+        CrystalRecipeBuilder.crystalize(ModItems.ECHO_TEMPLATE.get(), Items.NETHERITE_SWORD, ModItems.CRYSTAL_ECHO.get(), ModItems.ECHO_SWORD.get(), 200)
+                .unlocks("has_netherite_sword", has(Items.NETHERITE_SWORD)).save(recipeOutput, "echo_sword_crystalize");
     }
 
     protected static void smelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,

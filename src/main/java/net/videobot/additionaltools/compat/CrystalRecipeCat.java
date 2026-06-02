@@ -3,6 +3,9 @@ package net.videobot.additionaltools.compat;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
+import mezz.jei.api.gui.placement.HorizontalAlignment;
+import mezz.jei.api.gui.placement.VerticalAlignment;
+import mezz.jei.api.gui.widgets.IRecipeExtrasBuilder;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
@@ -59,5 +62,14 @@ public class CrystalRecipeCat implements IRecipeCategory<CrystalUpgraderRecipe> 
     @Override
     public @Nullable IDrawable getBackground() {
         return background;
+    }
+
+    @Override
+    public void createRecipeExtras(IRecipeExtrasBuilder builder, CrystalUpgraderRecipe recipe, IFocusGroup focuses) {
+        int craftTime = recipe.craftingTime()/20;
+        Component text = Component.translatable("jei.crystal_recipe_tip.craft_time", craftTime);
+        builder.addText(text, getWidth()-20, getHeight())
+                .setPosition(150, 70)
+                .setColor(0xFF808080);
     }
 }

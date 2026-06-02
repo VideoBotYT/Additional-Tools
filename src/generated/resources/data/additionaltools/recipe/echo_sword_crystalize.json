@@ -1,16 +1,17 @@
 {
   "type": "additionaltools:crystal_upgrader",
+  "craftingTime": 200,
+  "ingredient": {
+    "item": "additionaltools:crystal_echo"
+  },
+  "result": {
+    "count": 1,
+    "id": "additionaltools:echo_sword"
+  },
   "template": {
     "item": "additionaltools:echo_template"
   },
   "tool": {
     "item": "minecraft:netherite_sword"
-  },
-  "ingredient": {
-    "item": "additionaltools:crystal_echo"
-  },
-  "result": {
-    "id": "additionaltools:echo_sword"
-  },
-  "craftingTime": 20
+  }
 }
