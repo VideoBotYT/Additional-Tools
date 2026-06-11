@@ -6,7 +6,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.videobot.additionaltools.AdditionalToolsMod;
-import net.videobot.additionaltools.item.ModItems;
+import net.videobot.additionaltools.item.ModTools;
 
 import java.util.function.Supplier;
 
@@ -15,9 +15,9 @@ public class ToolsTab {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, AdditionalToolsMod.MODID);
 
     public static final Supplier<CreativeModeTab> ADDITIONAL_TOOLS = TOOLSTAB.register("additional_tools",
-            () -> CreativeModeTab.builder().icon(()->new ItemStack(ModItems.ECHO_SWORD.get()))
+            () -> CreativeModeTab.builder().icon(()->new ItemStack(ModTools.ECHO_SWORD.get()))
                     .title(Component.translatable("creativetab.additionaltools.additional_tools"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.ECHO_SWORD.get());
+                        output.accept(ModTools.ECHO_SWORD.get());
                     }).build());
 }

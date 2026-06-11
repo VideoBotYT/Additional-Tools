@@ -1,5 +1,6 @@
 {
   "values": [
-    "additionaltools:echo_ore"
+    "additionaltools:echo_ore",
+    "additionaltools:void_ore"
   ]
 }

@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "additionaltools:void_dust"
+    },
+    {
+      "item": "additionaltools:void_dust"
+    },
+    {
+      "item": "additionaltools:void_dust"
+    },
+    {
+      "item": "additionaltools:void_dust"
+    },
+    {
+      "item": "minecraft:amethyst_shard"
+    },
+    {
+      "item": "minecraft:amethyst_shard"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "additionaltools:void_ingot"
+  }
+}

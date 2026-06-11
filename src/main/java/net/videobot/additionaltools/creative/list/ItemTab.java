@@ -21,5 +21,7 @@ public class ItemTab {
                         output.accept(ModItems.RAW_ECHO.get());
                         output.accept(ModItems.CRYSTAL_ECHO.get());
                         output.accept(ModItems.ECHO_TEMPLATE.get());
+                        output.accept(ModItems.VOID_DUST.get());
+                        output.accept(ModItems.VOID_INGOT.get());
                     }).build());
 }

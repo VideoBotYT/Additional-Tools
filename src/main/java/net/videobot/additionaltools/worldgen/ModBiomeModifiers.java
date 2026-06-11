@@ -14,6 +14,7 @@ import net.videobot.additionaltools.AdditionalToolsMod;
 
 public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_ECHO_ORE = registerKey("add_echo_ore");
+    public static final ResourceKey<BiomeModifier> ADD_VOID_ORE = registerKey("add_void_ore");
 
     public static void bootstrap(BootstrapContext<BiomeModifier> context){
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
@@ -22,6 +23,11 @@ public class ModBiomeModifiers {
         context.register(ADD_ECHO_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.HAS_ANCIENT_CITY),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.ECHO_ORE_PLACE_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+
+        context.register(ADD_VOID_ORE, new  BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_END),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.VOID_ORE_PLACE_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
     }
 

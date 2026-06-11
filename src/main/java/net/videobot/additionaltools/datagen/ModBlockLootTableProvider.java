@@ -29,6 +29,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         add(ModBlocks.ECHO_ORE.get(),
                 block -> createOreDrop(ModBlocks.ECHO_ORE.get(), ModItems.RAW_ECHO.get()));
 
+        add(ModBlocks.VOID_ORE.get(),
+                block -> createMultipleOreDrops(ModBlocks.VOID_ORE.get(), ModItems.VOID_DUST.get(), 2, 8));
+
         this.dropSelf(ModBlocks.CRYSTAL_UPGRADER.get());
     }
 

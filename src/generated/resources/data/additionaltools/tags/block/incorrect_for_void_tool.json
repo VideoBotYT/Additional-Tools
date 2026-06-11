@@ -1,0 +1,7 @@
+{
+  "remove": [
+    "#additionaltools:incorrect_for_echo_tool",
+    "#minecraft:needs_diamond_tool"
+  ],
+  "values": []
+}

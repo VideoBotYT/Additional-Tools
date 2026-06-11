@@ -20,5 +20,6 @@ public class BlockTab {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.ECHO_ORE.get());
                         output.accept(ModBlocks.CRYSTAL_UPGRADER.get());
+                        output.accept(ModBlocks.VOID_ORE.get());
                     }).build());
 }

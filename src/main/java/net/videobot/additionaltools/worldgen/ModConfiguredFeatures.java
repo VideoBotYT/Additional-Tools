@@ -20,6 +20,7 @@ import java.util.List;
 
 public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ECHO_ORE_KEY = registerKey("echo_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> VOID_ORE_KEY = registerKey("void_ore");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context){
         RuleTest stoneReplacables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -30,6 +31,9 @@ public class ModConfiguredFeatures {
         List<OreConfiguration.TargetBlockState> echoRule = List.of(OreConfiguration.target(deepslateReplacables, ModBlocks.ECHO_ORE.get().defaultBlockState()));
 
         register(context, ECHO_ORE_KEY, Feature.ORE, new OreConfiguration(echoRule, 9));
+
+        register(context, VOID_ORE_KEY, Feature.ORE, new OreConfiguration(endstoneReplacables,
+                ModBlocks.VOID_ORE.get().defaultBlockState(), 4));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

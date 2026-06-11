@@ -10,6 +10,7 @@ import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -19,6 +20,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.videobot.additionaltools.block.entity.CrystalUpgraderBlockEntity;
 import net.videobot.additionaltools.block.entity.ModBlockEntities;
 import org.jetbrains.annotations.NotNull;
@@ -27,6 +30,7 @@ import org.jetbrains.annotations.Nullable;
 public class CrystalUpgraderBlock extends BaseEntityBlock {
     public static final MapCodec<CrystalUpgraderBlock> CODEC = simpleCodec(CrystalUpgraderBlock::new);
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    //public static final VoxelShape SHAPE = Block.box(-16, 0, -16, 32, 16, 32);
 
     public CrystalUpgraderBlock(Properties properties) {
         super(properties);
@@ -41,6 +45,11 @@ public class CrystalUpgraderBlock extends BaseEntityBlock {
     public @Nullable BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new CrystalUpgraderBlockEntity(pos, state);
     }
+
+    /*@Override
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return SHAPE;
+    }*/
 
     @Override
     protected RenderShape getRenderShape(BlockState state) {

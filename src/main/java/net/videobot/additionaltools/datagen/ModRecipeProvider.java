@@ -13,6 +13,7 @@ import net.videobot.additionaltools.AdditionalToolsMod;
 import net.videobot.additionaltools.block.ModBlocks;
 import net.videobot.additionaltools.datagen.builders.CrystalRecipeBuilder;
 import net.videobot.additionaltools.item.ModItems;
+import net.videobot.additionaltools.item.ModTools;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -25,8 +26,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
         blasting(recipeOutput, List.of(ModItems.RAW_ECHO.get(), ModBlocks.ECHO_ORE), RecipeCategory.TOOLS, ModItems.CRYSTAL_ECHO.get(), 4f, 800, "echo");
-
-        upgrade(recipeOutput, ModItems.ECHO_TEMPLATE.get(), ModItems.CRYSTAL_ECHO.get(), Items.NETHERITE_SWORD, ModItems.ECHO_SWORD.get(), RecipeCategory.COMBAT, "has_echo", ModItems.CRYSTAL_ECHO.get());
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ECHO_TEMPLATE.get())
                 .pattern("EEE")
@@ -45,7 +44,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Blocks.SMITHING_TABLE)
                 .unlockedBy("has_amethyst", has(Items.AMETHYST_SHARD)).save(recipeOutput);
 
-        CrystalRecipeBuilder.crystalize(ModItems.ECHO_TEMPLATE.get(), Items.NETHERITE_SWORD, ModItems.CRYSTAL_ECHO.get(), ModItems.ECHO_SWORD.get(), 200)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.VOID_INGOT.get())
+                .requires(ModItems.VOID_DUST.get(), 4)
+                .requires(Items.AMETHYST_SHARD, 2)
+                .unlockedBy("has_void", has(ModItems.VOID_DUST.get())).save(recipeOutput);
+
+        CrystalRecipeBuilder.crystalize(ModItems.ECHO_TEMPLATE.get(), Items.NETHERITE_SWORD, ModItems.CRYSTAL_ECHO.get(), ModTools.ECHO_SWORD.get(), 200)
                 .unlocks("has_netherite_sword", has(Items.NETHERITE_SWORD)).save(recipeOutput, "echo_sword_crystalize");
     }
 

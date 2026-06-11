@@ -23,14 +23,18 @@ public class ModBlocks {
             () -> new DropExperienceBlock(UniformInt.of(4, 8),
                     BlockBehaviour.Properties.of().strength(3f, 8f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
 
+    public static final DeferredBlock<Block> VOID_ORE = registerBlock("void_ore",
+            () -> new DropExperienceBlock(UniformInt.of(10, 20),
+                    BlockBehaviour.Properties.of().strength(6f, 2f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+
+    public static final DeferredBlock<Block> CRYSTAL_UPGRADER = registerBlock("crystal_upgrader",
+            () -> new CrystalUpgraderBlock(BlockBehaviour.Properties.of().strength(4f, 6f).requiresCorrectToolForDrops()));
+
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
         return toReturn;
     }
-
-    public static final DeferredBlock<Block> CRYSTAL_UPGRADER = registerBlock("crystal_upgrader",
-            () -> new CrystalUpgraderBlock(BlockBehaviour.Properties.of()));
 
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));

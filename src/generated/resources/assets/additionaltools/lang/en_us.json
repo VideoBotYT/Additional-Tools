@@ -1,6 +1,7 @@
 {
   "block.additionaltools.crystal_upgrader": "Crystal Upgrader",
   "block.additionaltools.echo_ore": "Echo Ore",
+  "block.additionaltools.void_ore": "Void Ore",
   "blockentity.additionaltools.crystal_upgrader": "Crystal Upgrader",
   "creativetab.additionaltools.additional_blocks": "Additional Blocks",
   "creativetab.additionaltools.additional_items": "Additional Items",
@@ -9,5 +10,8 @@
   "item.additionaltools.echo_sword": "Echo Sword",
   "item.additionaltools.echo_template": "Echo Upgrade Template",
   "item.additionaltools.raw_echo": "Raw Echo",
+  "item.additionaltools.void_dust": "Void Dust",
+  "item.additionaltools.void_ingot": "Void Ingot",
+  "item.additionaltools.void_pickaxe": "Void Pickaxe",
   "jei.crystal_recipe_tip.craft_time": "%s s"
 }

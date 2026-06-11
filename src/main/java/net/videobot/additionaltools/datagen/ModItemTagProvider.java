@@ -10,6 +10,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import net.videobot.additionaltools.AdditionalToolsMod;
 import net.videobot.additionaltools.item.ModItems;
+import net.videobot.additionaltools.item.ModTools;
 import org.jetbrains.annotations.Nullable;
 import java.util.concurrent.CompletableFuture;
 
@@ -22,6 +23,9 @@ public class ModItemTagProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(ItemTags.SWORDS)
-                .add(ModItems.ECHO_SWORD.get());
+                .add(ModTools.ECHO_SWORD.get());
+
+        tag(ItemTags.PICKAXES)
+                .add(ModTools.VOID_PICKAXE.get());
     }
 }

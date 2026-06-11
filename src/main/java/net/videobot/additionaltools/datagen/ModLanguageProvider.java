@@ -5,6 +5,7 @@ import net.neoforged.neoforge.common.data.LanguageProvider;
 import net.videobot.additionaltools.AdditionalToolsMod;
 import net.videobot.additionaltools.block.ModBlocks;
 import net.videobot.additionaltools.item.ModItems;
+import net.videobot.additionaltools.item.ModTools;
 
 public class ModLanguageProvider extends LanguageProvider {
     public ModLanguageProvider(PackOutput output) {
@@ -22,13 +23,17 @@ public class ModLanguageProvider extends LanguageProvider {
         // blocks
         add(ModBlocks.ECHO_ORE.get(), "Echo Ore");
         add(ModBlocks.CRYSTAL_UPGRADER.get(), "Crystal Upgrader");
+        add(ModBlocks.VOID_ORE.get(),"Void Ore");
 
         // items
         add(ModItems.RAW_ECHO.get(), "Raw Echo");
         add(ModItems.CRYSTAL_ECHO.get(), "Crystal Echo");
         add(ModItems.ECHO_TEMPLATE.get(), "Echo Upgrade Template");
+        add(ModItems.VOID_DUST.get(), "Void Dust");
+        add(ModItems.VOID_INGOT.get(), "Void Ingot");
 
         //tools
-        add(ModItems.ECHO_SWORD.get(), "Echo Sword");
+        add(ModTools.ECHO_SWORD.get(), "Echo Sword");
+        add(ModTools.VOID_PICKAXE.get(), "Void Pickaxe");
     }
 }

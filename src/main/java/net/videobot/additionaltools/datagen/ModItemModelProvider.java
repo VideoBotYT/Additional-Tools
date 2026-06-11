@@ -8,6 +8,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.videobot.additionaltools.AdditionalToolsMod;
 import net.videobot.additionaltools.item.ModItems;
+import net.videobot.additionaltools.item.ModTools;
 
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
@@ -20,7 +21,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.CRYSTAL_ECHO.get());
         basicItem(ModItems.ECHO_TEMPLATE.get());
 
-        handheldItem(ModItems.ECHO_SWORD.get());
+        handheldItem(ModTools.ECHO_SWORD.get());
     }
 
     private ItemModelBuilder handheldItem(DeferredItem<?> item) {

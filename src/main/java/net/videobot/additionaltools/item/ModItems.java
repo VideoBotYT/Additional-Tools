@@ -18,11 +18,14 @@ public class ModItems {
     public static final DeferredItem<Item> ECHO_TEMPLATE = ITEMS.register("echo_template",
             () -> new Item(new Item.Properties().fireResistant()));
 
-    public static final DeferredItem<SwordItem> ECHO_SWORD = ITEMS.register("echo_sword",
-            () -> new SwordItem(ModToolTiers.ECHO, new Item.Properties().fireResistant()
-                    .attributes(SwordItem.createAttributes(ModToolTiers.ECHO, 16, -1f))));
+    public static final DeferredItem<Item> VOID_DUST = ITEMS.register("void_dust",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> VOID_INGOT = ITEMS.register("void_ingot",
+            () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
+        ModTools.TOOLS.register(eventBus);
     }
 }

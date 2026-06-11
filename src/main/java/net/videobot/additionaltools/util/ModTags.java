@@ -13,6 +13,9 @@ public class ModTags {
         public static final TagKey<Block> NEEDS_ECHO_TOOL = createTag("needs_echo_tool");
         public static final TagKey<Block> INCORRECT_FOR_ECHO_TOOL = createTag("incorrect_for_echo_tool");
 
+        public static final TagKey<Block> NEEDS_VOID_TOOL = createTag("needs_void_tool");
+        public static final TagKey<Block> INCORRECT_FOR_VOID_TOOL = createTag("incorrect_for_void_tool");
+
         private static TagKey<Block> createTag(String name){
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(AdditionalToolsMod.MODID, name));
         }

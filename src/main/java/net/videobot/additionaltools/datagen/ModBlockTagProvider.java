@@ -20,9 +20,12 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(BlockTags.NEEDS_DIAMOND_TOOL)
-                .add(ModBlocks.ECHO_ORE.get());
+                .add(ModBlocks.ECHO_ORE.get())
+                .add(ModBlocks.VOID_ORE.get());
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.ECHO_ORE.get());
+                .add(ModBlocks.ECHO_ORE.get())
+                .add(ModBlocks.VOID_ORE.get())
+                .add(ModBlocks.CRYSTAL_UPGRADER.get());
 
         tag(ModTags.Blocks.NEEDS_ECHO_TOOL)
                 .addTag(BlockTags.NEEDS_DIAMOND_TOOL);
@@ -30,5 +33,15 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(ModTags.Blocks.INCORRECT_FOR_ECHO_TOOL)
                 .addTag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
                 .remove(ModTags.Blocks.NEEDS_ECHO_TOOL);
+
+        tag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_VOID_TOOL);
+
+        tag(ModTags.Blocks.NEEDS_VOID_TOOL)
+                .add(ModBlocks.CRYSTAL_UPGRADER.get());
+
+        tag(ModTags.Blocks.INCORRECT_FOR_VOID_TOOL)
+                .remove(ModTags.Blocks.INCORRECT_FOR_ECHO_TOOL)
+                .remove(BlockTags.NEEDS_DIAMOND_TOOL);
     }
 }
