@@ -52,8 +52,8 @@ public class CrystalUpgraderBlockEntity extends BlockEntity implements MenuProvi
     private static final int OUT_SLOT = 3;
 
     protected final ContainerData data;
-    private int progress = 0;
-    private int max_progress = 80;
+    public int progress = 0;
+    public int max_progress = 0;
 
     public CrystalUpgraderBlockEntity(BlockPos pos, BlockState blockState) {
         super(ModBlockEntities.CRYSTAL_UPGRADER_BLOCK_ENTITY.get(), pos, blockState);

@@ -3,6 +3,7 @@
   "block.additionaltools.echo_ore": "Echo Ore",
   "block.additionaltools.void_ore": "Void Ore",
   "blockentity.additionaltools.crystal_upgrader": "Crystal Upgrader",
+  "config.jade.plugin_additionaltools.crystal_upgrader": "Crystal Upgrader",
   "creativetab.additionaltools.additional_blocks": "Additional Blocks",
   "creativetab.additionaltools.additional_items": "Additional Items",
   "creativetab.additionaltools.additional_tools": "Additional Tools",
@@ -13,5 +14,6 @@
   "item.additionaltools.void_dust": "Void Dust",
   "item.additionaltools.void_ingot": "Void Ingot",
   "item.additionaltools.void_pickaxe": "Void Pickaxe",
+  "jade.tooltip.crystal_upgrader": "Progress: %d s / %d s",
   "jei.crystal_recipe_tip.craft_time": "%s s"
 }

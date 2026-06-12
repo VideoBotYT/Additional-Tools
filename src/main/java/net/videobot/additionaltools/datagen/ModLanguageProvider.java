@@ -19,11 +19,13 @@ public class ModLanguageProvider extends LanguageProvider {
         add("creativetab.additionaltools.additional_tools", "Additional Tools");
         add("blockentity.additionaltools.crystal_upgrader", "Crystal Upgrader");
         add("jei.crystal_recipe_tip.craft_time", "%s s");
+        add("jade.tooltip.crystal_upgrader", "Progress: %d s / %d s");
+        add("config.jade.plugin_additionaltools.crystal_upgrader", "Crystal Upgrader");
 
         // blocks
         add(ModBlocks.ECHO_ORE.get(), "Echo Ore");
         add(ModBlocks.CRYSTAL_UPGRADER.get(), "Crystal Upgrader");
-        add(ModBlocks.VOID_ORE.get(),"Void Ore");
+        add(ModBlocks.VOID_ORE.get(), "Void Ore");
 
         // items
         add(ModItems.RAW_ECHO.get(), "Raw Echo");
