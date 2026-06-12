@@ -44,6 +44,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Blocks.SMITHING_TABLE)
                 .unlockedBy("has_amethyst", has(Items.AMETHYST_SHARD)).save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModTools.VOID_PICKAXE.get())
+                .pattern("VVV")
+                .pattern(" S ")
+                .pattern(" S ")
+                .define('V', ModItems.VOID_INGOT.get())
+                .define('S', Items.STICK)
+                .unlockedBy("has_void", has(ModItems.VOID_INGOT.get())).save(recipeOutput);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.VOID_INGOT.get())
                 .requires(ModItems.VOID_DUST.get(), 4)
                 .requires(Items.AMETHYST_SHARD, 2)

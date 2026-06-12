@@ -20,8 +20,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.RAW_ECHO.get());
         basicItem(ModItems.CRYSTAL_ECHO.get());
         basicItem(ModItems.ECHO_TEMPLATE.get());
+        basicItem(ModItems.VOID_DUST.get());
+        basicItem(ModItems.VOID_INGOT.get());
 
         handheldItem(ModTools.ECHO_SWORD.get());
+        handheldItem(ModTools.VOID_PICKAXE.get());
     }
 
     private ItemModelBuilder handheldItem(DeferredItem<?> item) {

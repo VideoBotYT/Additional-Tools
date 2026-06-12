@@ -22,6 +22,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.ECHO_ORE);
+        blockWithItem(ModBlocks.VOID_ORE);
 
         /*ResourceLocation crystal_upgrader_side = ResourceLocation.fromNamespaceAndPath(AdditionalToolsMod.MODID, "block/crystal_upgrader/crystal_upgrader_side");
         ResourceLocation crystal_upgrader_top = ResourceLocation.fromNamespaceAndPath(AdditionalToolsMod.MODID, "block/crystal_upgrader/crystal_upgrader_top");

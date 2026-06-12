@@ -19,5 +19,6 @@ public class ToolsTab {
                     .title(Component.translatable("creativetab.additionaltools.additional_tools"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModTools.ECHO_SWORD.get());
+                        output.accept(ModTools.VOID_PICKAXE.get());
                     }).build());
 }

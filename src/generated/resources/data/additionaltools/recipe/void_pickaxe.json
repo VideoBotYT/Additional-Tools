@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "V": {
+      "item": "additionaltools:void_ingot"
+    }
+  },
+  "pattern": [
+    "VVV",
+    " S ",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "additionaltools:void_pickaxe"
+  }
+}
