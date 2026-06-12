@@ -28,7 +28,8 @@ public class ModBlocks {
                     BlockBehaviour.Properties.of().strength(6f, 2f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
     public static final DeferredBlock<Block> CRYSTAL_UPGRADER = registerBlock("crystal_upgrader",
-            () -> new CrystalUpgraderBlock(BlockBehaviour.Properties.of().strength(4f, 6f).requiresCorrectToolForDrops()));
+            () -> new CrystalUpgraderBlock(BlockBehaviour.Properties.of().strength(4f, 6f).requiresCorrectToolForDrops()
+                    .lightLevel(state -> state.getValue(CrystalUpgraderBlock.ACTIVE) ? 15 : 0)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

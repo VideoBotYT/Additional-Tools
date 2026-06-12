@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -30,10 +31,11 @@ import org.jetbrains.annotations.Nullable;
 public class CrystalUpgraderBlock extends BaseEntityBlock {
     public static final MapCodec<CrystalUpgraderBlock> CODEC = simpleCodec(CrystalUpgraderBlock::new);
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-    //public static final VoxelShape SHAPE = Block.box(-16, 0, -16, 32, 16, 32);
+    public static final BooleanProperty ACTIVE = BooleanProperty.create("active");
 
     public CrystalUpgraderBlock(Properties properties) {
         super(properties);
+        this.registerDefaultState(this.defaultBlockState().setValue(ACTIVE, false));
     }
 
     @Override
@@ -45,11 +47,6 @@ public class CrystalUpgraderBlock extends BaseEntityBlock {
     public @Nullable BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new CrystalUpgraderBlockEntity(pos, state);
     }
-
-    /*@Override
-    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return SHAPE;
-    }*/
 
     @Override
     protected RenderShape getRenderShape(BlockState state) {
@@ -78,7 +75,7 @@ public class CrystalUpgraderBlock extends BaseEntityBlock {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
+        builder.add(FACING, ACTIVE);
     }
 
     @Override

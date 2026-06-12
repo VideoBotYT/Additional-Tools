@@ -1,19 +1,28 @@
 {
   "variants": {
-    "facing=east": {
-      "model": "additionaltools:block/crystal_upgrader",
-      "y": 90
-    },
-    "facing=north": {
+    "active=false,facing=east": {
       "model": "additionaltools:block/crystal_upgrader"
     },
-    "facing=south": {
-      "model": "additionaltools:block/crystal_upgrader",
-      "y": 180
+    "active=false,facing=north": {
+      "model": "additionaltools:block/crystal_upgrader"
     },
-    "facing=west": {
-      "model": "additionaltools:block/crystal_upgrader",
-      "y": 270
+    "active=false,facing=south": {
+      "model": "additionaltools:block/crystal_upgrader"
+    },
+    "active=false,facing=west": {
+      "model": "additionaltools:block/crystal_upgrader"
+    },
+    "active=true,facing=east": {
+      "model": "additionaltools:block/crystal_upgrader_active"
+    },
+    "active=true,facing=north": {
+      "model": "additionaltools:block/crystal_upgrader_active"
+    },
+    "active=true,facing=south": {
+      "model": "additionaltools:block/crystal_upgrader_active"
+    },
+    "active=true,facing=west": {
+      "model": "additionaltools:block/crystal_upgrader_active"
     }
   }
 }

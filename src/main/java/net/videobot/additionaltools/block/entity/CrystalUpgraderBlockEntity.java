@@ -1,6 +1,7 @@
 package net.videobot.additionaltools.block.entity;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -10,17 +11,21 @@ import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.inventory.RecipeCraftingHolder;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.AbstractFurnaceBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
+import net.videobot.additionaltools.block.custom.CrystalUpgraderBlock;
 import net.videobot.additionaltools.item.ModItems;
 import net.videobot.additionaltools.recipe.ModRecipes;
 import net.videobot.additionaltools.recipe.crystal_upgrader.CrystalUpgraderRecipe;
@@ -96,9 +101,10 @@ public class CrystalUpgraderBlockEntity extends BlockEntity implements MenuProvi
     }
 
     public void tick(Level level, BlockPos blockPos, BlockState blockState) {
-        if (hasRecipe()) {
+        boolean flag = hasRecipe();
+        boolean flag1 = false;
+        if (flag) {
             increaseProgress();
-            setChanged(level, blockPos, blockState);
 
             if (hasCraftingFinished()) {
                 craft();
@@ -106,7 +112,16 @@ public class CrystalUpgraderBlockEntity extends BlockEntity implements MenuProvi
             }
         } else {
             resetProgress();
+            flag1 = true;
         }
+
+        if (flag != blockState.getValue(CrystalUpgraderBlock.ACTIVE)){
+            flag1 = true;
+            blockState = blockState.setValue(CrystalUpgraderBlock.ACTIVE, hasRecipe());
+            level.setBlock(blockPos, blockState, 3);
+        }
+        if (flag1)
+            setChanged(level, blockPos, blockState);
     }
 
     private void resetProgress() {
