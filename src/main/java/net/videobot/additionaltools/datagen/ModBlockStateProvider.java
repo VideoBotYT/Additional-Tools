@@ -2,7 +2,7 @@ package net.videobot.additionaltools.datagen;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.fml.common.Mod;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
@@ -11,8 +11,6 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.videobot.additionaltools.AdditionalToolsMod;
 import net.videobot.additionaltools.block.ModBlocks;
 import net.videobot.additionaltools.block.custom.CrystalUpgraderBlock;
-
-import static com.ibm.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -30,27 +28,32 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         /*horizontalBlock(ModBlocks.CRYSTAL_UPGRADER.get(), crystal_upgrader_side, crystal_upgrader_front, crystal_upgrader_top);
         blockItem(ModBlocks.CRYSTAL_UPGRADER);*/
-        blockEntity();
+        //blockEntity();
+        blockItem(ModBlocks.CRYSTAL_UPGRADER);
     }
 
-    private void blockEntity(){
+    /*private void blockEntity(){
         getVariantBuilder(ModBlocks.CRYSTAL_UPGRADER.get()).forAllStates(state -> {
             if (state.getValue(CrystalUpgraderBlock.ACTIVE)) {
                 return new ConfiguredModel[]{new ConfiguredModel(models().orientable("crystal_upgrader_active",
                         ResourceLocation.fromNamespaceAndPath(AdditionalToolsMod.MODID, "block/crystal_upgrader/crystal_upgrader_side_active"),
                         ResourceLocation.fromNamespaceAndPath(AdditionalToolsMod.MODID, "block/crystal_upgrader/crystal_upgrader_front_active"),
-                        ResourceLocation.fromNamespaceAndPath(AdditionalToolsMod.MODID, "block/crystal_upgrader/crystal_upgrader_top_active")))};
+                        ResourceLocation.fromNamespaceAndPath(AdditionalToolsMod.MODID, "block/crystal_upgrader/crystal_upgrader_top_active")))
+                        .rotationY = (((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 180) % 360)
+                };
             }
             else{
                 return new ConfiguredModel[]{new ConfiguredModel(models().orientable("crystal_upgrader",
                         ResourceLocation.fromNamespaceAndPath(AdditionalToolsMod.MODID, "block/crystal_upgrader/crystal_upgrader_side"),
                         ResourceLocation.fromNamespaceAndPath(AdditionalToolsMod.MODID, "block/crystal_upgrader/crystal_upgrader_front"),
-                        ResourceLocation.fromNamespaceAndPath(AdditionalToolsMod.MODID, "block/crystal_upgrader/crystal_upgrader_top")))};
+                        ResourceLocation.fromNamespaceAndPath(AdditionalToolsMod.MODID, "block/crystal_upgrader/crystal_upgrader_top")))
+                        .rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 180) % 360)
+                };
             }
         });
 
         blockItem(ModBlocks.CRYSTAL_UPGRADER);
-    }
+    }*/
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {
         simpleBlockWithItem(deferredBlock.get(), cubeAll(deferredBlock.get()));

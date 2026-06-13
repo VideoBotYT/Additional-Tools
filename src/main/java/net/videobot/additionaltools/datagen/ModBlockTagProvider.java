@@ -37,6 +37,24 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
                 .addTag(ModTags.Blocks.NEEDS_VOID_TOOL);
 
+        tag(BlockTags.INCORRECT_FOR_GOLD_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_VOID_TOOL);
+
+        tag(BlockTags.INCORRECT_FOR_GOLD_TOOL)
+            .addTag(ModTags.Blocks.NEEDS_VOID_TOOL);
+
+        tag(BlockTags.INCORRECT_FOR_IRON_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_VOID_TOOL);
+
+        tag(BlockTags.INCORRECT_FOR_STONE_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_VOID_TOOL);
+
+        tag(BlockTags.INCORRECT_FOR_WOODEN_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_VOID_TOOL);
+
+        tag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_VOID_TOOL);
+
         tag(ModTags.Blocks.NEEDS_VOID_TOOL)
                 .add(ModBlocks.CRYSTAL_UPGRADER.get());
 

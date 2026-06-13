@@ -1,0 +1,17 @@
+{
+  "type": "additionaltools:crystal_upgrader",
+  "craftingTime": 800,
+  "ingredient": {
+    "item": "additionaltools:void_ingot"
+  },
+  "result": {
+    "count": 1,
+    "id": "additionaltools:void_pickaxe"
+  },
+  "template": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
+  },
+  "tool": {
+    "item": "minecraft:netherite_pickaxe"
+  }
+}

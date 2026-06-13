@@ -44,14 +44,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Blocks.SMITHING_TABLE)
                 .unlockedBy("has_amethyst", has(Items.AMETHYST_SHARD)).save(recipeOutput);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModTools.VOID_PICKAXE.get())
-                .pattern("VVV")
-                .pattern(" S ")
-                .pattern(" S ")
-                .define('V', ModItems.VOID_INGOT.get())
-                .define('S', Items.STICK)
-                .unlockedBy("has_void", has(ModItems.VOID_INGOT.get())).save(recipeOutput);
-
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.VOID_INGOT.get())
                 .requires(ModItems.VOID_DUST.get(), 4)
                 .requires(Items.AMETHYST_SHARD, 2)
@@ -59,6 +51,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         CrystalRecipeBuilder.crystalize(ModItems.ECHO_TEMPLATE.get(), Items.NETHERITE_SWORD, ModItems.CRYSTAL_ECHO.get(), ModTools.ECHO_SWORD.get(), 200)
                 .unlocks("has_netherite_sword", has(Items.NETHERITE_SWORD)).save(recipeOutput, "echo_sword_crystalize");
+
+        CrystalRecipeBuilder.crystalize(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, Items.NETHERITE_PICKAXE, ModItems.VOID_INGOT.get(), ModTools.VOID_PICKAXE.get(), 800)
+                .unlocks("has_netherite_pickaxe", has(Items.NETHERITE_PICKAXE)).save(recipeOutput, "void_pickaxe_crystalize");
     }
 
     protected static void smelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,

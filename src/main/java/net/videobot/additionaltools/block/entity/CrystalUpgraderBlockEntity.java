@@ -126,7 +126,7 @@ public class CrystalUpgraderBlockEntity extends BlockEntity implements MenuProvi
 
     private void resetProgress() {
         progress = 0;
-        max_progress = 80;
+        max_progress = 0;
     }
 
     private void craft() {
