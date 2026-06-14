@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "additionaltools:block/echo_slab"
+    },
+    "type=double": {
+      "model": "additionaltools:block/echo_block"
+    },
+    "type=top": {
+      "model": "additionaltools:block/echo_slab_top"
+    }
+  }
+}

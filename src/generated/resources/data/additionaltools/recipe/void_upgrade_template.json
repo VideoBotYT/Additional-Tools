@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "T": {
+      "item": "minecraft:netherite_upgrade_smithing_template"
+    },
+    "V": {
+      "item": "additionaltools:void_ingot"
+    }
+  },
+  "pattern": [
+    "VAV",
+    "ATA",
+    "VAV"
+  ],
+  "result": {
+    "count": 1,
+    "id": "additionaltools:void_upgrade_template"
+  }
+}

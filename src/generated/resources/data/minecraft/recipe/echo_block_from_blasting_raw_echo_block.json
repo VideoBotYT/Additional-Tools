@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "cookingtime": 2400,
+  "experience": 50.0,
+  "group": "echo",
+  "ingredient": {
+    "item": "additionaltools:raw_echo_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "additionaltools:echo_block"
+  }
+}

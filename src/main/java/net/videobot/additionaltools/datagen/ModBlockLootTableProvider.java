@@ -32,7 +32,27 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         add(ModBlocks.VOID_ORE.get(),
                 block -> createMultipleOreDrops(ModBlocks.VOID_ORE.get(), ModItems.VOID_DUST.get(), 2, 8));
 
+        add(ModBlocks.ECHO_DOOR.get(),
+                block -> createDoorTable(ModBlocks.ECHO_DOOR.get()));
+        add(ModBlocks.ECHO_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.ECHO_SLAB.get()));
+        add(ModBlocks.VOID_DOOR.get(),
+                block -> createDoorTable(ModBlocks.VOID_DOOR.get()));
+        add(ModBlocks.VOID_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.VOID_SLAB.get()));
+
         this.dropSelf(ModBlocks.CRYSTAL_UPGRADER.get());
+        this.dropSelf(ModBlocks.VOID_BLOCK.get());
+        this.dropSelf(ModBlocks.ECHO_BLOCK.get());
+        this.dropSelf(ModBlocks.RAW_ECHO_BLOCK.get());
+
+        this.dropSelf(ModBlocks.ECHO_STAIRS.get());
+        this.dropSelf(ModBlocks.ECHO_BUTTON.get());
+        this.dropSelf(ModBlocks.ECHO_WALL.get());
+
+        this.dropSelf(ModBlocks.VOID_STAIRS.get());
+        this.dropSelf(ModBlocks.VOID_BUTTON.get());
+        this.dropSelf(ModBlocks.VOID_WALL.get());
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops){

@@ -1,6 +1,9 @@
 {
   "values": [
     "additionaltools:echo_ore",
-    "additionaltools:void_ore"
+    "additionaltools:void_ore",
+    "additionaltools:crystal_upgrader",
+    "additionaltools:void_block",
+    "additionaltools:echo_block"
   ]
 }

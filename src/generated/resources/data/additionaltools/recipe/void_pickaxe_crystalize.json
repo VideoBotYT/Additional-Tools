@@ -9,7 +9,7 @@
     "id": "additionaltools:void_pickaxe"
   },
   "template": {
-    "item": "minecraft:netherite_upgrade_smithing_template"
+    "item": "additionaltools:void_upgrade_template"
   },
   "tool": {
     "item": "minecraft:netherite_pickaxe"

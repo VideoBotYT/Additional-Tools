@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "additionaltools:block/void_block",
+    "side": "additionaltools:block/void_block",
+    "top": "additionaltools:block/void_block"
+  }
+}

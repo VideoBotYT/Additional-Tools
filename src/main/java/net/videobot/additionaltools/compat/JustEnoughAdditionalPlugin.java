@@ -56,6 +56,6 @@ public class JustEnoughAdditionalPlugin implements IModPlugin {
     @Override
     public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration) {
         registration.addRecipeTransferHandler(CrystalUpgraderMenu.class, ModMenuTypes.CRYSTAL_UPGRADER_MENU.get(),
-                CrystalRecipeCat.CRYSTAL_UPGRADER_RECIPE_TYPE, 0, 3, 3, 36);
+                CrystalRecipeCat.CRYSTAL_UPGRADER_RECIPE_TYPE, 0, 3, 4, 36);
     }
 }

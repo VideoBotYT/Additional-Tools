@@ -26,6 +26,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
         blasting(recipeOutput, List.of(ModItems.RAW_ECHO.get(), ModBlocks.ECHO_ORE), RecipeCategory.TOOLS, ModItems.CRYSTAL_ECHO.get(), 4f, 800, "echo");
+        blasting(recipeOutput, List.of(ModBlocks.RAW_ECHO_BLOCK.get()), RecipeCategory.TOOLS, ModBlocks.ECHO_BLOCK.get(), 50f, 2400, "echo");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ECHO_TEMPLATE.get())
                 .pattern("EEE")
@@ -44,16 +45,41 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Blocks.SMITHING_TABLE)
                 .unlockedBy("has_amethyst", has(Items.AMETHYST_SHARD)).save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.VOID_UPGRADE_TEMPLATE.get())
+                .pattern("VAV")
+                .pattern("ATA")
+                .pattern("VAV")
+                .define('V', ModItems.VOID_INGOT.get())
+                .define('A', Items.AMETHYST_SHARD)
+                .define('T', Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE)
+                .unlockedBy("has_amethyst", has(Items.AMETHYST_SHARD)).save(recipeOutput);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.VOID_INGOT.get())
                 .requires(ModItems.VOID_DUST.get(), 4)
                 .requires(Items.AMETHYST_SHARD, 2)
                 .unlockedBy("has_void", has(ModItems.VOID_DUST.get())).save(recipeOutput);
 
+        nineBlockStorageRecipes(recipeOutput, RecipeCategory.MISC, ModItems.VOID_INGOT, RecipeCategory.BUILDING_BLOCKS, ModBlocks.VOID_BLOCK.get().asItem());
+        nineBlockStorageRecipes(recipeOutput, RecipeCategory.MISC, ModItems.CRYSTAL_ECHO, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ECHO_BLOCK.get().asItem());
+        nineBlockStorageRecipes(recipeOutput, RecipeCategory.MISC, ModItems.RAW_ECHO, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RAW_ECHO_BLOCK.get().asItem());
+
         CrystalRecipeBuilder.crystalize(ModItems.ECHO_TEMPLATE.get(), Items.NETHERITE_SWORD, ModItems.CRYSTAL_ECHO.get(), ModTools.ECHO_SWORD.get(), 200)
                 .unlocks("has_netherite_sword", has(Items.NETHERITE_SWORD)).save(recipeOutput, "echo_sword_crystalize");
 
-        CrystalRecipeBuilder.crystalize(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, Items.NETHERITE_PICKAXE, ModItems.VOID_INGOT.get(), ModTools.VOID_PICKAXE.get(), 800)
+        CrystalRecipeBuilder.crystalize(ModItems.VOID_UPGRADE_TEMPLATE.get(), Items.NETHERITE_PICKAXE, ModItems.VOID_INGOT.get(), ModTools.VOID_PICKAXE.get(), 800)
                 .unlocks("has_netherite_pickaxe", has(Items.NETHERITE_PICKAXE)).save(recipeOutput, "void_pickaxe_crystalize");
+
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ECHO_BUTTON.asItem(), ModBlocks.ECHO_BLOCK.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ECHO_DOOR.asItem(), ModBlocks.ECHO_BLOCK.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ECHO_STAIRS.asItem(), ModBlocks.ECHO_BLOCK.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ECHO_WALL.asItem(), ModBlocks.ECHO_BLOCK.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ECHO_SLAB.asItem(), ModBlocks.ECHO_BLOCK.asItem(), 2);
+
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.VOID_BUTTON.asItem(), ModBlocks.VOID_BLOCK.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.VOID_DOOR.asItem(), ModBlocks.VOID_BLOCK.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.VOID_STAIRS.asItem(), ModBlocks.VOID_BLOCK.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.VOID_WALL.asItem(), ModBlocks.VOID_BLOCK.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.VOID_SLAB.asItem(), ModBlocks.VOID_BLOCK.asItem(), 2);
     }
 
     protected static void smelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,

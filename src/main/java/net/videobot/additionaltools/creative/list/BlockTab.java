@@ -19,7 +19,22 @@ public class BlockTab {
                     .title(Component.translatable("creativetab.additionaltools.additional_blocks"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.ECHO_ORE.get());
+                        output.accept(ModBlocks.RAW_ECHO_BLOCK.get());
+                        output.accept(ModBlocks.ECHO_BLOCK.get());
                         output.accept(ModBlocks.CRYSTAL_UPGRADER.get());
                         output.accept(ModBlocks.VOID_ORE.get());
+                        output.accept(ModBlocks.VOID_BLOCK.get());
+
+                        output.accept(ModBlocks.ECHO_DOOR.get());
+                        output.accept(ModBlocks.ECHO_STAIRS.get());
+                        output.accept(ModBlocks.ECHO_BUTTON.get());
+                        output.accept(ModBlocks.ECHO_SLAB.get());
+                        output.accept(ModBlocks.ECHO_WALL.get());
+
+                        output.accept(ModBlocks.VOID_DOOR.get());
+                        output.accept(ModBlocks.VOID_STAIRS.get());
+                        output.accept(ModBlocks.VOID_BUTTON.get());
+                        output.accept(ModBlocks.VOID_SLAB.get());
+                        output.accept(ModBlocks.VOID_WALL.get());
                     }).build());
 }

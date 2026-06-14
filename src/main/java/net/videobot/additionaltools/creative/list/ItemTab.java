@@ -23,5 +23,6 @@ public class ItemTab {
                         output.accept(ModItems.ECHO_TEMPLATE.get());
                         output.accept(ModItems.VOID_DUST.get());
                         output.accept(ModItems.VOID_INGOT.get());
+                        output.accept(ModItems.VOID_UPGRADE_TEMPLATE.get());
                     }).build());
 }

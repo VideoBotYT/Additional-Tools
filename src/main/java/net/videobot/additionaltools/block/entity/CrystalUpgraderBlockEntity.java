@@ -174,12 +174,12 @@ public class CrystalUpgraderBlockEntity extends BlockEntity implements MenuProvi
                 || itemStackHandler.getStackInSlot(OUT_SLOT).getItem() == output.getItem();
     }
 
-    private boolean canInsertIntoOutputSlot(int count) {
+    /*private boolean canInsertIntoOutputSlot(int count) {
         int maxCount = itemStackHandler.getStackInSlot(OUT_SLOT).isEmpty() ? 64 : itemStackHandler.getStackInSlot(OUT_SLOT).getMaxStackSize();
         int currentCount = itemStackHandler.getStackInSlot(OUT_SLOT).getCount();
 
         return maxCount >= currentCount + count;
-    }
+    }*/
 
     @Override
     protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {

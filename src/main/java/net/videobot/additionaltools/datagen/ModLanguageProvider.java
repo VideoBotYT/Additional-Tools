@@ -26,6 +26,19 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.ECHO_ORE.get(), "Echo Ore");
         add(ModBlocks.CRYSTAL_UPGRADER.get(), "Crystal Upgrader");
         add(ModBlocks.VOID_ORE.get(), "Void Ore");
+        add(ModBlocks.VOID_BLOCK.get(), "Void Block");
+        add(ModBlocks.ECHO_DOOR.get(), "Echo Door");
+        add(ModBlocks.ECHO_BUTTON.get(), "Echo Button");
+        add(ModBlocks.ECHO_SLAB.get(), "Echo Slab");
+        add(ModBlocks.ECHO_WALL.get(), "Echo Wall");
+        add(ModBlocks.ECHO_STAIRS.get(), "Echo Stairs");
+        add(ModBlocks.ECHO_BLOCK.get(), "Echo Block");
+        add(ModBlocks.RAW_ECHO_BLOCK.get(), "Raw Echo Block");
+        add(ModBlocks.VOID_DOOR.get(), "Void Door");
+        add(ModBlocks.VOID_BUTTON.get(), "Void Button");
+        add(ModBlocks.VOID_SLAB.get(), "Void Slab");
+        add(ModBlocks.VOID_WALL.get(), "Void Wall");
+        add(ModBlocks.VOID_STAIRS.get(), "Void Stairs");
 
         // items
         add(ModItems.RAW_ECHO.get(), "Raw Echo");
@@ -33,6 +46,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModItems.ECHO_TEMPLATE.get(), "Echo Upgrade Template");
         add(ModItems.VOID_DUST.get(), "Void Dust");
         add(ModItems.VOID_INGOT.get(), "Void Ingot");
+        add(ModItems.VOID_UPGRADE_TEMPLATE.get(), "Void Upgrade Template");
 
         //tools
         add(ModTools.ECHO_SWORD.get(), "Echo Sword");

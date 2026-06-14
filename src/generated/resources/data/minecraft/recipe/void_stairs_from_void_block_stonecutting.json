@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "additionaltools:void_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "additionaltools:void_stairs"
+  }
+}

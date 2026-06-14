@@ -16,5 +16,5 @@ public class ModTools {
 
     public static final DeferredItem<PickaxeItem> VOID_PICKAXE = TOOLS.register("void_pickaxe",
             () -> new PickaxeItem(ModToolTiers.VOID, new Item.Properties().fireResistant()
-                    .attributes(PickaxeItem.createAttributes(ModToolTiers.VOID, 8, -2.4f))));
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.VOID, 8, -1f))));
 }

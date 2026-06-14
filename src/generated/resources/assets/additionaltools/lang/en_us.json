@@ -1,7 +1,20 @@
 {
   "block.additionaltools.crystal_upgrader": "Crystal Upgrader",
+  "block.additionaltools.echo_block": "Echo Block",
+  "block.additionaltools.echo_button": "Echo Button",
+  "block.additionaltools.echo_door": "Echo Door",
   "block.additionaltools.echo_ore": "Echo Ore",
+  "block.additionaltools.echo_slab": "Echo Slab",
+  "block.additionaltools.echo_stairs": "Echo Stairs",
+  "block.additionaltools.echo_wall": "Echo Wall",
+  "block.additionaltools.raw_echo_block": "Raw Echo Block",
+  "block.additionaltools.void_block": "Void Block",
+  "block.additionaltools.void_button": "Void Button",
+  "block.additionaltools.void_door": "Void Door",
   "block.additionaltools.void_ore": "Void Ore",
+  "block.additionaltools.void_slab": "Void Slab",
+  "block.additionaltools.void_stairs": "Void Stairs",
+  "block.additionaltools.void_wall": "Void Wall",
   "blockentity.additionaltools.crystal_upgrader": "Crystal Upgrader",
   "config.jade.plugin_additionaltools.crystal_upgrader": "Crystal Upgrader",
   "creativetab.additionaltools.additional_blocks": "Additional Blocks",
@@ -14,6 +27,7 @@
   "item.additionaltools.void_dust": "Void Dust",
   "item.additionaltools.void_ingot": "Void Ingot",
   "item.additionaltools.void_pickaxe": "Void Pickaxe",
+  "item.additionaltools.void_upgrade_template": "Void Upgrade Template",
   "jade.tooltip.crystal_upgrader": "Progress: %d s / %d s",
   "jei.crystal_recipe_tip.craft_time": "%s s"
 }

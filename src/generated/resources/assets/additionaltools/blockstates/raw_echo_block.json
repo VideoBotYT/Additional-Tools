@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "additionaltools:block/raw_echo_block"
+    }
+  }
+}

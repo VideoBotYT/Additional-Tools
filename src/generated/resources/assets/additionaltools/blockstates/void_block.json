@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "additionaltools:block/void_block"
+    }
+  }
+}
