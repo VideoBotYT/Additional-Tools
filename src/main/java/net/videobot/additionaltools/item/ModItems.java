@@ -27,6 +27,9 @@ public class ModItems {
     public static final DeferredItem<Item> VOID_UPGRADE_TEMPLATE = ITEMS.register("void_upgrade_template",
             () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> ANCIENT_NOTES_FROM_FORGE = ITEMS.register("ancient_notes_from_forge",
+            () -> new Item(new Item.Properties()));
+
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
         ModTools.TOOLS.register(eventBus);

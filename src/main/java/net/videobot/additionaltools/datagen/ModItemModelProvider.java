@@ -26,6 +26,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.VOID_DUST.get());
         basicItem(ModItems.VOID_INGOT.get());
         basicItem(ModItems.VOID_UPGRADE_TEMPLATE.get());
+        basicItem(ModItems.ANCIENT_NOTES_FROM_FORGE.get());
 
         handheldItem(ModTools.ECHO_SWORD.get());
         handheldItem(ModTools.VOID_PICKAXE.get());

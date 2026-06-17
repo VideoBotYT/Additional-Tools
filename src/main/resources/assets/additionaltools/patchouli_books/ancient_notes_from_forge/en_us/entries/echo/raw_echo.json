@@ -1,0 +1,19 @@
+{
+  "name": "Raw Echo",
+  "icon": "additionaltools:raw_echo",
+  "category": "additionaltools:echo",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Raw echo comes from the echo ore which can only be find in Ancient Cities. $(br)Echo Ore is extremely tough and requires a blast furnace to be smelted."
+    },
+    {
+      "type": "patchouli:blasting",
+      "recipe": "minecraft:crystal_echo_from_blasting_raw_echo",
+      "recipe2": "minecraft:crystal_echo_from_blasting_echo_ore",
+      "title": "How to get Crystal Echo",
+      "text": "This will take forever to blast, I wonder what we can make from it."
+    }
+  ]
+}

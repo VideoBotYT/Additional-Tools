@@ -45,6 +45,8 @@ repositories {
     }
 
     maven { url = "https://api.modrinth.com/maven" }
+
+    maven { url 'https://maven.blamejared.com' }
 }
 
 base {
@@ -163,6 +165,9 @@ dependencies {
     runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
 
     implementation "maven.modrinth:jade:${jade_version}+neoforge"
+
+    compileOnly ("vazkii.patchouli:Patchouli:${minecraft_version}-${patchouli_version}-NEOFORGE:api")
+    runtimeOnly ("vazkii.patchouli:Patchouli:${minecraft_version}-${patchouli_version}-NEOFORGE")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

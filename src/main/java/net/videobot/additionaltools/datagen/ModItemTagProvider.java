@@ -27,5 +27,10 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
         tag(ItemTags.PICKAXES)
                 .add(ModTools.VOID_PICKAXE.get());
+
+        tag(ItemTags.BOOKSHELF_BOOKS)
+                .add(ModItems.ANCIENT_NOTES_FROM_FORGE.get());
+        tag(ItemTags.LECTERN_BOOKS)
+                .add(ModItems.ANCIENT_NOTES_FROM_FORGE.get());
     }
 }

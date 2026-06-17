@@ -1,0 +1,12 @@
+{
+  "name": "Crystal Echo",
+  "icon": "additionaltools:crystal_echo",
+  "category": "additionaltools:echo",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A really strong material and hard to get material.$(br2)Currently I was only able to craft a sword from it. This took years to figure out.$(br)This stuff is so powerful that it requires an unknown crafter to even make tools from it."
+    }
+  ]
+}
