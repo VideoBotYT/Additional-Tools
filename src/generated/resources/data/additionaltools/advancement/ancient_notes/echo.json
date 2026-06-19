@@ -1,0 +1,36 @@
+{
+  "parent": "additionaltools:ancient_notes/root",
+  "criteria": {
+    "has_echo": {
+      "conditions": {
+        "items": [
+          {
+            "items": "additionaltools:crystal_echo"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.additionaltools.echo.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "additionaltools:crystal_echo"
+    },
+    "title": {
+      "translate": "advancements.additionaltools.echo.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_echo"
+    ]
+  ],
+  "rewards": {
+    "experience": 10
+  }
+}

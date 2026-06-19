@@ -1,0 +1,36 @@
+{
+  "criteria": {
+    "has_notes": {
+      "conditions": {
+        "items": [
+          {
+            "items": "additionaltools:ancient_notes_from_forge"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
+    "description": {
+      "translate": "advancements.additionaltools.notes.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "additionaltools:ancient_notes_from_forge"
+    },
+    "title": {
+      "translate": "advancements.additionaltools.notes.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_notes"
+    ]
+  ],
+  "rewards": {
+    "experience": 10
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Crystal Upgrader",
+  "icon": "additionaltools:crystal_upgrader",
+  "category": "additionaltools:echo",
+  "sortnum": 2,
+  "advancement": "additionaltools:ancient_notes/crystalizer",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A powerful machine that works the same way as a smithing table.$(br)Capable of upgrading tools to whatever level you want with the correct upgrade template and resource."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "I wish crafting in this could go faster but the tools are just this powerful and can't be crafted instantly, they take forever to craft but it's all worth the time."
+    }
+  ]
+}

@@ -5,5 +5,8 @@
   "creative_tab": "additionaltools:additional_items",
   "use_resource_pack": true,
   "book_texture": "patchouli:textures/gui/book_cyan.png",
-  "model": "additionaltools:ancient_notes_from_forge"
+  "model": "additionaltools:ancient_notes_from_forge",
+  "dont_generate_book": true,
+  "custom_book_item": "additionaltools:ancient_notes_from_forge",
+  "advancements_tab": "additionaltools:advancement/ancient_notes"
 }

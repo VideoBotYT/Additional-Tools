@@ -18,6 +18,7 @@ public class ItemTab {
             () -> CreativeModeTab.builder().icon(()->new ItemStack(ModItems.RAW_ECHO.get()))
                     .title(Component.translatable("creativetab.additionaltools.additional_items"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.ANCIENT_NOTES_FROM_FORGE.get());
                         output.accept(ModItems.RAW_ECHO.get());
                         output.accept(ModItems.CRYSTAL_ECHO.get());
                         output.accept(ModItems.ECHO_TEMPLATE.get());

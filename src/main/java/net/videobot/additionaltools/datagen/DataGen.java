@@ -40,5 +40,8 @@ public class DataGen {
 
         // i'm not creating the translation file myself bro sob
         generator.addProvider(event.includeClient(), new ModLanguageProvider(packOutput));
+
+        //advacements
+        generator.addProvider(event.includeServer(), new ModAdvancementProvider(packOutput, lookupProvider, existingFileHelper));
     }
 }

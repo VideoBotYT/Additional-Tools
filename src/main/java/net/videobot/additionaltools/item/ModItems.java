@@ -6,6 +6,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.videobot.additionaltools.AdditionalToolsMod;
+import net.videobot.additionaltools.item.custom.AncientNotes;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(AdditionalToolsMod.MODID);
@@ -28,7 +29,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> ANCIENT_NOTES_FROM_FORGE = ITEMS.register("ancient_notes_from_forge",
-            () -> new Item(new Item.Properties()));
+            () -> new AncientNotes(new Item.Properties()));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

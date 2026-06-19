@@ -7,6 +7,10 @@
     {
       "type": "patchouli:text",
       "text": "A really strong material and hard to get material.$(br2)Currently I was only able to craft a sword from it. This took years to figure out.$(br)This stuff is so powerful that it requires an unknown crafter to even make tools from it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "I don't know much of this special crafting block, all I know is that it requires this Crystal Echo and some Amethyst Shards to be crafted."
     }
   ]
 }

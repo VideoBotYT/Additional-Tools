@@ -1,0 +1,36 @@
+{
+  "parent": "additionaltools:ancient_notes/echo",
+  "criteria": {
+    "has_crystalizer": {
+      "conditions": {
+        "items": [
+          {
+            "items": "additionaltools:crystal_upgrader"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.additionaltools.crystalizer.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "additionaltools:crystal_upgrader"
+    },
+    "title": {
+      "translate": "advancements.additionaltools.crystalizer.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_crystalizer"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

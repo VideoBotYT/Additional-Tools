@@ -18,6 +18,14 @@ public class ModLanguageProvider extends LanguageProvider {
         add("creativetab.additionaltools.additional_items", "Additional Items");
         add("creativetab.additionaltools.additional_tools", "Additional Tools");
         add("blockentity.additionaltools.crystal_upgrader", "Crystal Upgrader");
+
+        add("advancements.additionaltools.notes.title", "Ancient Notes");
+        add("advancements.additionaltools.notes.description", "Gather information for the Ancient Notes");
+        add("advancements.additionaltools.echo.title", "Strong but old material");
+        add("advancements.additionaltools.echo.description", "Gathered Crystal Echo");
+        add("advancements.additionaltools.crystalizer.title", "Smithing but with a timer?");
+        add("advancements.additionaltools.crystalizer.description", "The key to powerful tools");
+
         add("jei.crystal_recipe_tip.craft_time", "%s s");
         add("jade.tooltip.crystal_upgrader", "Progress: %d s / %d s");
         add("config.jade.plugin_additionaltools.crystal_upgrader", "Crystal Upgrader");
@@ -47,6 +55,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModItems.VOID_DUST.get(), "Void Dust");
         add(ModItems.VOID_INGOT.get(), "Void Ingot");
         add(ModItems.VOID_UPGRADE_TEMPLATE.get(), "Void Upgrade Template");
+        add(ModItems.ANCIENT_NOTES_FROM_FORGE.get(), "Ancient Forge Notes");
 
         //tools
         add(ModTools.ECHO_SWORD.get(), "Echo Sword");
