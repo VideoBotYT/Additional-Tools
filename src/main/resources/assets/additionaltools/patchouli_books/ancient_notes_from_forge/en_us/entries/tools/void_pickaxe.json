@@ -1,0 +1,13 @@
+{
+  "name": "Void Pickaxe",
+  "icon": "additionaltools:void_pickaxe",
+  "category": "additionaltools:tools",
+  "sortnum": 2,
+  "advancement": "additionaltools:ancient_notes/void_pickaxe",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Yes, a tool stronger than Netherite. I don't know what tools are even stronger than this, I can't stop, it's like an addiction now. Can I make more tools with this Void material?$(br)I have to find out."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "parent": "additionaltools:ancient_notes/crystalizer",
+  "criteria": {
+    "has_echo_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": "additionaltools:echo_sword"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.additionaltools.echosword.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "additionaltools:echo_sword"
+    },
+    "title": {
+      "translate": "advancements.additionaltools.echosword.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_echo_sword"
+    ]
+  ],
+  "rewards": {
+    "experience": 4
+  },
+  "sends_telemetry_event": true
+}

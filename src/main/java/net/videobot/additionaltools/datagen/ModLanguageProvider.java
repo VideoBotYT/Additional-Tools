@@ -26,6 +26,15 @@ public class ModLanguageProvider extends LanguageProvider {
         add("advancements.additionaltools.crystalizer.title", "Smithing but with a timer?");
         add("advancements.additionaltools.crystalizer.description", "The key to powerful tools");
 
+        add("advancements.additionaltools.voidstarter.title", "Void Technology?");
+        add("advancements.additionaltools.voidstarter.description", "Key to Void Technology");
+        add("advancements.additionaltools.void.title", "Void Ingots");
+        add("advancements.additionaltools.void.description", "Void Magic");
+        add("advancements.additionaltools.echosword.title", "Sound of Skulk");
+        add("advancements.additionaltools.echosword.description", "Craft the Echo Sword");
+        add("advancements.additionaltools.voidpickaxe.title", "The next tier");
+        add("advancements.additionaltools.voidpickaxe.description", "Craft the Void Pickaxe");
+
         add("jei.crystal_recipe_tip.craft_time", "%s s");
         add("jade.tooltip.crystal_upgrader", "Progress: %d s / %d s");
         add("config.jade.plugin_additionaltools.crystal_upgrader", "Crystal Upgrader");

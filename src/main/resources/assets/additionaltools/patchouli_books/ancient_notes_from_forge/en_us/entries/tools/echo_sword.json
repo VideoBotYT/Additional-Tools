@@ -1,0 +1,13 @@
+{
+  "name": "Echo Sword",
+  "icon": "additionaltools:echo_sword",
+  "category": "additionaltools:tools",
+  "sortnum": 2,
+  "advancement": "additionaltools:ancient_notes/echo_sword",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A sword crafted using Crystal Echo and one of the strongest sword in this world.$(br)I don't know how this is possible but the tools are only getting stronger after this. I can't stop my research, I have to find more materials and craft more tools with them."
+    }
+  ]
+}

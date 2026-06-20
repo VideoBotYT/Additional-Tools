@@ -1,0 +1,36 @@
+{
+  "parent": "additionaltools:ancient_notes/voidstarter",
+  "criteria": {
+    "has_void": {
+      "conditions": {
+        "items": [
+          {
+            "items": "additionaltools:void_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.additionaltools.void.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "additionaltools:void_ingot"
+    },
+    "title": {
+      "translate": "advancements.additionaltools.void.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_void"
+    ]
+  ],
+  "rewards": {
+    "experience": 69
+  },
+  "sends_telemetry_event": true
+}

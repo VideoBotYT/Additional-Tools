@@ -1,0 +1,37 @@
+{
+  "parent": "additionaltools:ancient_notes/crystalizer",
+  "criteria": {
+    "has_void_pickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "additionaltools:void_pickaxe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.additionaltools.voidpickaxe.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "additionaltools:void_pickaxe"
+    },
+    "title": {
+      "translate": "advancements.additionaltools.voidpickaxe.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_void_pickaxe"
+    ]
+  ],
+  "rewards": {
+    "experience": 4
+  },
+  "sends_telemetry_event": true
+}

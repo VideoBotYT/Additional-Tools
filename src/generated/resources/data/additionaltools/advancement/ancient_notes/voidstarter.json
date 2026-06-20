@@ -1,0 +1,36 @@
+{
+  "parent": "additionaltools:ancient_notes/root",
+  "criteria": {
+    "has_dust": {
+      "conditions": {
+        "items": [
+          {
+            "items": "additionaltools:void_dust"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.additionaltools.voidstarter.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "additionaltools:void_dust"
+    },
+    "title": {
+      "translate": "advancements.additionaltools.voidstarter.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_dust"
+    ]
+  ],
+  "rewards": {
+    "experience": 50
+  }
+}
