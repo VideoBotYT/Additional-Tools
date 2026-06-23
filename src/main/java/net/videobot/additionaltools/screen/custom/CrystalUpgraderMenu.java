@@ -5,17 +5,23 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.neoforged.neoforge.items.SlotItemHandler;
 import net.videobot.additionaltools.block.ModBlocks;
 import net.videobot.additionaltools.block.entity.CrystalUpgraderBlockEntity;
+import net.videobot.additionaltools.recipe.ModRecipes;
+import net.videobot.additionaltools.recipe.crystal_upgrader.CrystalUpgraderRecipe;
 import net.videobot.additionaltools.screen.ModMenuTypes;
+
+import java.util.List;
 
 public class CrystalUpgraderMenu extends AbstractContainerMenu {
     public final CrystalUpgraderBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
+    private final List<RecipeHolder<CrystalUpgraderRecipe>> recipes;
 
     public CrystalUpgraderMenu(int containerId, Inventory inv, FriendlyByteBuf extraData) {
         this(containerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
@@ -27,11 +33,27 @@ public class CrystalUpgraderMenu extends AbstractContainerMenu {
         this.blockEntity = ((CrystalUpgraderBlockEntity) entity);
         this.level = inv.player.level();
         this.data = data;
+        this.recipes = level.getRecipeManager().getAllRecipesFor(ModRecipes.CRYSTAL_UPGRADER_RECIPE_TYPE.get());
 
         // input slots
-        this.addSlot(new SlotItemHandler(blockEntity.itemStackHandler, 0, 44, 21)); // template slot
-        this.addSlot(new SlotItemHandler(blockEntity.itemStackHandler, 1, 80, 21)); // item to upgrade
-        this.addSlot(new SlotItemHandler(blockEntity.itemStackHandler, 2, 116, 21)); // upgrade ingredient
+        this.addSlot(new SlotItemHandler(blockEntity.itemStackHandler, 0, 44, 21){
+            @Override
+            public boolean mayPlace(ItemStack stack) {
+                return recipes.stream().anyMatch(holder -> holder.value().template().test(stack));
+            }
+        }); // template slot
+        this.addSlot(new SlotItemHandler(blockEntity.itemStackHandler, 1, 80, 21){
+            @Override
+            public boolean mayPlace(ItemStack stack) {
+                return recipes.stream().anyMatch(holder -> holder.value().tool().test(stack));
+            }
+        }); // item to upgrade
+        this.addSlot(new SlotItemHandler(blockEntity.itemStackHandler, 2, 116, 21){
+            @Override
+            public boolean mayPlace(ItemStack stack) {
+                return recipes.stream().anyMatch(holder -> holder.value().ingredient().test(stack));
+            }
+        }); // upgrade ingredient
 
         // output slot
         this.addSlot(new SlotItemHandler(blockEntity.itemStackHandler, 3, 80, 61){
@@ -58,7 +80,6 @@ public class CrystalUpgraderMenu extends AbstractContainerMenu {
 
         return (maxProgress != 0 && progress != 0) ? progress * arrowPixelSize / maxProgress : 0;
     }
-
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons
     // must assign a slot number to each of the slots used by the GUI.
